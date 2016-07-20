@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		177F0C361D1B838A00BAD5AA /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C351D1B838A00BAD5AA /* BBBadgeBarButtonItem.m */; };
+		177F0C3B1D1B88E800BAD5AA /* GrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C3A1D1B88E800BAD5AA /* GrowingTextView.m */; };
+		177F0C3E1D1B893500BAD5AA /* MessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C3D1D1B893500BAD5AA /* MessageViewCell.m */; };
+		177F0C411D1B89E700BAD5AA /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C401D1B89E700BAD5AA /* ChatController.m */; };
+		177F0C441D1B8A4900BAD5AA /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C431D1B8A4900BAD5AA /* Message.m */; };
+		178990F01D40306900331425 /* libProRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 178990EE1D40306900331425 /* libProRTC.a */; };
+		178990F11D40306900331425 /* libProRTCCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 178990EF1D40306900331425 /* libProRTCCore.a */; };
+		17F7BA4E1D1B43A300C1AECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BA4D1D1B43A300C1AECD /* main.m */; };
+		17F7BA511D1B43A300C1AECD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BA501D1B43A300C1AECD /* AppDelegate.m */; };
+		17F7BA571D1B43A300C1AECD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F7BA551D1B43A300C1AECD /* Main.storyboard */; };
+		17F7BA591D1B43A300C1AECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F7BA581D1B43A300C1AECD /* Assets.xcassets */; };
+		17F7BA5C1D1B43A300C1AECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F7BA5A1D1B43A300C1AECD /* LaunchScreen.storyboard */; };
+		17F7BA741D1B49CF00C1AECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA731D1B49CF00C1AECD /* UIKit.framework */; };
+		17F7BA771D1B49F200C1AECD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA761D1B49F200C1AECD /* GLKit.framework */; };
+		17F7BA791D1B4A0600C1AECD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA781D1B4A0600C1AECD /* CoreMedia.framework */; };
+		17F7BA7B1D1B4A0F00C1AECD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA7A1D1B4A0F00C1AECD /* CoreGraphics.framework */; };
+		17F7BA7D1D1B4A1800C1AECD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA7C1D1B4A1800C1AECD /* AVFoundation.framework */; };
+		17F7BA7F1D1B4A1F00C1AECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA7E1D1B4A1F00C1AECD /* Foundation.framework */; };
+		17F7BA811D1B4A2500C1AECD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA801D1B4A2500C1AECD /* Security.framework */; };
+		17F7BA831D1B4A3D00C1AECD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA821D1B4A3D00C1AECD /* CFNetwork.framework */; };
+		17F7BA861D1B4A4B00C1AECD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA841D1B4A4B00C1AECD /* AudioToolbox.framework */; };
+		17F7BA871D1B4A4B00C1AECD /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA851D1B4A4B00C1AECD /* VideoToolbox.framework */; };
+		17F7BA8A1D1B4A5E00C1AECD /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA881D1B4A5E00C1AECD /* CoreAudio.framework */; };
+		17F7BA8B1D1B4A5E00C1AECD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA891D1B4A5E00C1AECD /* CoreVideo.framework */; };
+		17F7BA8D1D1B4A6500C1AECD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA8C1D1B4A6500C1AECD /* OpenGLES.framework */; };
+		17F7BA8F1D1B4A6C00C1AECD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA8E1D1B4A6C00C1AECD /* QuartzCore.framework */; };
+		17F7BA951D1B4AAF00C1AECD /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA901D1B4AAF00C1AECD /* libc++.1.dylib */; };
+		17F7BA961D1B4AAF00C1AECD /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA911D1B4AAF00C1AECD /* libicucore.A.dylib */; };
+		17F7BA971D1B4AAF00C1AECD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA921D1B4AAF00C1AECD /* libsqlite3.dylib */; };
+		17F7BA981D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA931D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib */; };
+		17F7BA991D1B4AAF00C1AECD /* libSystem.B.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA941D1B4AAF00C1AECD /* libSystem.B.dylib */; };
+		17F7BA9C1D1B4C3700C1AECD /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BA9B1D1B4C3700C1AECD /* HomeController.m */; };
+		17F7BAA31D1B512D00C1AECD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BAA11D1B512D00C1AECD /* Reachability.m */; };
+		17F7BAA61D1B524E00C1AECD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BAA51D1B524E00C1AECD /* Utils.m */; };
+		17F7BAA91D1B545900C1AECD /* VideoCallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BAA81D1B545900C1AECD /* VideoCallController.m */; };
+		3F2391834C6AAA87C3A28483 /* libPods-ProRTCSmapleIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 636F81BCD9421E364BC11935 /* libPods-ProRTCSmapleIOS.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		177F0C341D1B838A00BAD5AA /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		177F0C351D1B838A00BAD5AA /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
+		177F0C391D1B88E800BAD5AA /* GrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingTextView.h; sourceTree = "<group>"; };
+		177F0C3A1D1B88E800BAD5AA /* GrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowingTextView.m; sourceTree = "<group>"; };
+		177F0C3C1D1B893500BAD5AA /* MessageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewCell.h; sourceTree = "<group>"; };
+		177F0C3D1D1B893500BAD5AA /* MessageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewCell.m; sourceTree = "<group>"; };
+		177F0C3F1D1B89E700BAD5AA /* ChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
+		177F0C401D1B89E700BAD5AA /* ChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
+		177F0C421D1B8A4900BAD5AA /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		177F0C431D1B8A4900BAD5AA /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		178990DE1D40306900331425 /* ProRTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProRTC.h; sourceTree = "<group>"; };
+		178990DF1D40306900331425 /* PWDataFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWDataFile.h; sourceTree = "<group>"; };
+		178990E01D40306900331425 /* PWErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWErrorCode.h; sourceTree = "<group>"; };
+		178990E11D40306900331425 /* PWMediaConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWMediaConfiguration.h; sourceTree = "<group>"; };
+		178990E21D40306900331425 /* PWMediaSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWMediaSession.h; sourceTree = "<group>"; };
+		178990E31D40306900331425 /* PWRemotePeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWRemotePeer.h; sourceTree = "<group>"; };
+		178990E41D40306900331425 /* PWRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWRoom.h; sourceTree = "<group>"; };
+		178990E51D40306900331425 /* PWStatsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWStatsBuilder.h; sourceTree = "<group>"; };
+		178990E61D40306900331425 /* RTCEAGLVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCEAGLVideoView.h; sourceTree = "<group>"; };
+		178990E71D40306900331425 /* RTCMediaStream+Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RTCMediaStream+Configuration.h"; sourceTree = "<group>"; };
+		178990E81D40306900331425 /* RTCMediaStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCMediaStream.h; sourceTree = "<group>"; };
+		178990E91D40306900331425 /* RTCMediaStreamTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCMediaStreamTrack.h; sourceTree = "<group>"; };
+		178990EA1D40306900331425 /* RTCTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCTypes.h; sourceTree = "<group>"; };
+		178990EB1D40306900331425 /* RTCVideoRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoRenderer.h; sourceTree = "<group>"; };
+		178990EC1D40306900331425 /* RTCVideoTrack+Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RTCVideoTrack+Renderer.h"; sourceTree = "<group>"; };
+		178990ED1D40306900331425 /* RTCVideoTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoTrack.h; sourceTree = "<group>"; };
+		178990EE1D40306900331425 /* libProRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libProRTC.a; sourceTree = "<group>"; };
+		178990EF1D40306900331425 /* libProRTCCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libProRTCCore.a; sourceTree = "<group>"; };
+		17F7BA491D1B43A300C1AECD /* ProRTCSmapleIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProRTCSmapleIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17F7BA4D1D1B43A300C1AECD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		17F7BA4F1D1B43A300C1AECD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		17F7BA501D1B43A300C1AECD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		17F7BA561D1B43A300C1AECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17F7BA581D1B43A300C1AECD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17F7BA5B1D1B43A300C1AECD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17F7BA5D1D1B43A300C1AECD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F7BA731D1B49CF00C1AECD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		17F7BA761D1B49F200C1AECD /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		17F7BA781D1B4A0600C1AECD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		17F7BA7A1D1B4A0F00C1AECD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		17F7BA7C1D1B4A1800C1AECD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		17F7BA7E1D1B4A1F00C1AECD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		17F7BA801D1B4A2500C1AECD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		17F7BA821D1B4A3D00C1AECD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		17F7BA841D1B4A4B00C1AECD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		17F7BA851D1B4A4B00C1AECD /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		17F7BA881D1B4A5E00C1AECD /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		17F7BA891D1B4A5E00C1AECD /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		17F7BA8C1D1B4A6500C1AECD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		17F7BA8E1D1B4A6C00C1AECD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		17F7BA901D1B4AAF00C1AECD /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
+		17F7BA911D1B4AAF00C1AECD /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
+		17F7BA921D1B4AAF00C1AECD /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		17F7BA931D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
+		17F7BA941D1B4AAF00C1AECD /* libSystem.B.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSystem.B.dylib; path = ../../../../usr/lib/libSystem.B.dylib; sourceTree = "<group>"; };
+		17F7BA9A1D1B4C3700C1AECD /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
+		17F7BA9B1D1B4C3700C1AECD /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
+		17F7BA9D1D1B4FE600C1AECD /* ProRTCSampleIOS-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProRTCSampleIOS-prefix.pch"; sourceTree = "<group>"; };
+		17F7BAA01D1B512D00C1AECD /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		17F7BAA11D1B512D00C1AECD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		17F7BAA41D1B524E00C1AECD /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		17F7BAA51D1B524E00C1AECD /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		17F7BAA71D1B545900C1AECD /* VideoCallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCallController.h; sourceTree = "<group>"; };
+		17F7BAA81D1B545900C1AECD /* VideoCallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCallController.m; sourceTree = "<group>"; };
+		636F81BCD9421E364BC11935 /* libPods-ProRTCSmapleIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProRTCSmapleIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E27C8F339C126C452D95328 /* Pods-ProRTCSmapleIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProRTCSmapleIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProRTCSmapleIOS/Pods-ProRTCSmapleIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		99BE24F2D23D20EEFBA01D0C /* Pods-ProRTCSmapleIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProRTCSmapleIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProRTCSmapleIOS/Pods-ProRTCSmapleIOS.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17F7BA461D1B43A300C1AECD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17F7BA951D1B4AAF00C1AECD /* libc++.1.dylib in Frameworks */,
+				17F7BA961D1B4AAF00C1AECD /* libicucore.A.dylib in Frameworks */,
+				17F7BA971D1B4AAF00C1AECD /* libsqlite3.dylib in Frameworks */,
+				17F7BA981D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib in Frameworks */,
+				17F7BA991D1B4AAF00C1AECD /* libSystem.B.dylib in Frameworks */,
+				17F7BA8F1D1B4A6C00C1AECD /* QuartzCore.framework in Frameworks */,
+				178990F11D40306900331425 /* libProRTCCore.a in Frameworks */,
+				17F7BA8D1D1B4A6500C1AECD /* OpenGLES.framework in Frameworks */,
+				17F7BA8A1D1B4A5E00C1AECD /* CoreAudio.framework in Frameworks */,
+				17F7BA8B1D1B4A5E00C1AECD /* CoreVideo.framework in Frameworks */,
+				17F7BA861D1B4A4B00C1AECD /* AudioToolbox.framework in Frameworks */,
+				17F7BA871D1B4A4B00C1AECD /* VideoToolbox.framework in Frameworks */,
+				17F7BA831D1B4A3D00C1AECD /* CFNetwork.framework in Frameworks */,
+				17F7BA811D1B4A2500C1AECD /* Security.framework in Frameworks */,
+				17F7BA7F1D1B4A1F00C1AECD /* Foundation.framework in Frameworks */,
+				17F7BA7D1D1B4A1800C1AECD /* AVFoundation.framework in Frameworks */,
+				17F7BA7B1D1B4A0F00C1AECD /* CoreGraphics.framework in Frameworks */,
+				17F7BA791D1B4A0600C1AECD /* CoreMedia.framework in Frameworks */,
+				178990F01D40306900331425 /* libProRTC.a in Frameworks */,
+				17F7BA771D1B49F200C1AECD /* GLKit.framework in Frameworks */,
+				17F7BA741D1B49CF00C1AECD /* UIKit.framework in Frameworks */,
+				3F2391834C6AAA87C3A28483 /* libPods-ProRTCSmapleIOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		177F0C321D1B838A00BAD5AA /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				177F0C331D1B838A00BAD5AA /* BarButtonBadge */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		177F0C331D1B838A00BAD5AA /* BarButtonBadge */ = {
+			isa = PBXGroup;
+			children = (
+				177F0C341D1B838A00BAD5AA /* BBBadgeBarButtonItem.h */,
+				177F0C351D1B838A00BAD5AA /* BBBadgeBarButtonItem.m */,
+			);
+			path = BarButtonBadge;
+			sourceTree = "<group>";
+		};
+		177F0C371D1B88A800BAD5AA /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				177F0C421D1B8A4900BAD5AA /* Message.h */,
+				177F0C431D1B8A4900BAD5AA /* Message.m */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		177F0C381D1B88A800BAD5AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				177F0C391D1B88E800BAD5AA /* GrowingTextView.h */,
+				177F0C3A1D1B88E800BAD5AA /* GrowingTextView.m */,
+				177F0C3C1D1B893500BAD5AA /* MessageViewCell.h */,
+				177F0C3D1D1B893500BAD5AA /* MessageViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		178990DD1D40306900331425 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				178990DE1D40306900331425 /* ProRTC.h */,
+				178990DF1D40306900331425 /* PWDataFile.h */,
+				178990E01D40306900331425 /* PWErrorCode.h */,
+				178990E11D40306900331425 /* PWMediaConfiguration.h */,
+				178990E21D40306900331425 /* PWMediaSession.h */,
+				178990E31D40306900331425 /* PWRemotePeer.h */,
+				178990E41D40306900331425 /* PWRoom.h */,
+				178990E51D40306900331425 /* PWStatsBuilder.h */,
+				178990E61D40306900331425 /* RTCEAGLVideoView.h */,
+				178990E71D40306900331425 /* RTCMediaStream+Configuration.h */,
+				178990E81D40306900331425 /* RTCMediaStream.h */,
+				178990E91D40306900331425 /* RTCMediaStreamTrack.h */,
+				178990EA1D40306900331425 /* RTCTypes.h */,
+				178990EB1D40306900331425 /* RTCVideoRenderer.h */,
+				178990EC1D40306900331425 /* RTCVideoTrack+Renderer.h */,
+				178990ED1D40306900331425 /* RTCVideoTrack.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		17F7BA401D1B43A300C1AECD = {
+			isa = PBXGroup;
+			children = (
+				17F7BA751D1B49DC00C1AECD /* Frameworks */,
+				17F7BA641D1B498500C1AECD /* ProRTC */,
+				17F7BA4B1D1B43A300C1AECD /* ProRTCSmapleIOS */,
+				17F7BA4A1D1B43A300C1AECD /* Products */,
+				29F6122BE2EFDC8F22A3294D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		17F7BA4A1D1B43A300C1AECD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17F7BA491D1B43A300C1AECD /* ProRTCSmapleIOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17F7BA4B1D1B43A300C1AECD /* ProRTCSmapleIOS */ = {
+			isa = PBXGroup;
+			children = (
+				17F7BA4F1D1B43A300C1AECD /* AppDelegate.h */,
+				17F7BA501D1B43A300C1AECD /* AppDelegate.m */,
+				17F7BA9E1D1B512D00C1AECD /* Misc */,
+				177F0C371D1B88A800BAD5AA /* Modal */,
+				177F0C381D1B88A800BAD5AA /* Views */,
+				17F7BA631D1B43DC00C1AECD /* Controllers */,
+				17F7BA551D1B43A300C1AECD /* Main.storyboard */,
+				17F7BA581D1B43A300C1AECD /* Assets.xcassets */,
+				17F7BA5A1D1B43A300C1AECD /* LaunchScreen.storyboard */,
+				17F7BA5D1D1B43A300C1AECD /* Info.plist */,
+				17F7BA4C1D1B43A300C1AECD /* Supporting Files */,
+			);
+			path = ProRTCSmapleIOS;
+			sourceTree = "<group>";
+		};
+		17F7BA4C1D1B43A300C1AECD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				17F7BA4D1D1B43A300C1AECD /* main.m */,
+				17F7BA9D1D1B4FE600C1AECD /* ProRTCSampleIOS-prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17F7BA631D1B43DC00C1AECD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				17F7BA9A1D1B4C3700C1AECD /* HomeController.h */,
+				17F7BA9B1D1B4C3700C1AECD /* HomeController.m */,
+				17F7BAA71D1B545900C1AECD /* VideoCallController.h */,
+				17F7BAA81D1B545900C1AECD /* VideoCallController.m */,
+				177F0C3F1D1B89E700BAD5AA /* ChatController.h */,
+				177F0C401D1B89E700BAD5AA /* ChatController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		17F7BA641D1B498500C1AECD /* ProRTC */ = {
+			isa = PBXGroup;
+			children = (
+				178990DD1D40306900331425 /* Headers */,
+				178990EE1D40306900331425 /* libProRTC.a */,
+				178990EF1D40306900331425 /* libProRTCCore.a */,
+			);
+			path = ProRTC;
+			sourceTree = "<group>";
+		};
+		17F7BA751D1B49DC00C1AECD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17F7BA901D1B4AAF00C1AECD /* libc++.1.dylib */,
+				17F7BA911D1B4AAF00C1AECD /* libicucore.A.dylib */,
+				17F7BA921D1B4AAF00C1AECD /* libsqlite3.dylib */,
+				17F7BA931D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib */,
+				17F7BA941D1B4AAF00C1AECD /* libSystem.B.dylib */,
+				17F7BA8E1D1B4A6C00C1AECD /* QuartzCore.framework */,
+				17F7BA8C1D1B4A6500C1AECD /* OpenGLES.framework */,
+				17F7BA881D1B4A5E00C1AECD /* CoreAudio.framework */,
+				17F7BA891D1B4A5E00C1AECD /* CoreVideo.framework */,
+				17F7BA841D1B4A4B00C1AECD /* AudioToolbox.framework */,
+				17F7BA851D1B4A4B00C1AECD /* VideoToolbox.framework */,
+				17F7BA821D1B4A3D00C1AECD /* CFNetwork.framework */,
+				17F7BA801D1B4A2500C1AECD /* Security.framework */,
+				17F7BA7E1D1B4A1F00C1AECD /* Foundation.framework */,
+				17F7BA7C1D1B4A1800C1AECD /* AVFoundation.framework */,
+				17F7BA7A1D1B4A0F00C1AECD /* CoreGraphics.framework */,
+				17F7BA781D1B4A0600C1AECD /* CoreMedia.framework */,
+				17F7BA761D1B49F200C1AECD /* GLKit.framework */,
+				17F7BA731D1B49CF00C1AECD /* UIKit.framework */,
+				636F81BCD9421E364BC11935 /* libPods-ProRTCSmapleIOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17F7BA9E1D1B512D00C1AECD /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				177F0C321D1B838A00BAD5AA /* ThirdParty */,
+				17F7BA9F1D1B512D00C1AECD /* Reachability */,
+				17F7BAA21D1B512D00C1AECD /* Utils */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		17F7BA9F1D1B512D00C1AECD /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				17F7BAA01D1B512D00C1AECD /* Reachability.h */,
+				17F7BAA11D1B512D00C1AECD /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		17F7BAA21D1B512D00C1AECD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				17F7BAA41D1B524E00C1AECD /* Utils.h */,
+				17F7BAA51D1B524E00C1AECD /* Utils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		29F6122BE2EFDC8F22A3294D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E27C8F339C126C452D95328 /* Pods-ProRTCSmapleIOS.debug.xcconfig */,
+				99BE24F2D23D20EEFBA01D0C /* Pods-ProRTCSmapleIOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17F7BA481D1B43A300C1AECD /* ProRTCSmapleIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17F7BA601D1B43A300C1AECD /* Build configuration list for PBXNativeTarget "ProRTCSmapleIOS" */;
+			buildPhases = (
+				4B5855216D9B546BB3715CDC /* 📦 Check Pods Manifest.lock */,
+				17F7BA451D1B43A300C1AECD /* Sources */,
+				17F7BA461D1B43A300C1AECD /* Frameworks */,
+				17F7BA471D1B43A300C1AECD /* Resources */,
+				ABC684F0548641D2487A5827 /* 📦 Embed Pods Frameworks */,
+				8304F809B6D764FE9BD64D10 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProRTCSmapleIOS;
+			productName = ProRTCSmapleIOS;
+			productReference = 17F7BA491D1B43A300C1AECD /* ProRTCSmapleIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17F7BA411D1B43A300C1AECD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Codiant Software Technologies Pvt Ltd";
+				TargetAttributes = {
+					17F7BA481D1B43A300C1AECD = {
+						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 17F7BA441D1B43A300C1AECD /* Build configuration list for PBXProject "ProRTCSmapleIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17F7BA401D1B43A300C1AECD;
+			productRefGroup = 17F7BA4A1D1B43A300C1AECD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17F7BA481D1B43A300C1AECD /* ProRTCSmapleIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17F7BA471D1B43A300C1AECD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17F7BA5C1D1B43A300C1AECD /* LaunchScreen.storyboard in Resources */,
+				17F7BA591D1B43A300C1AECD /* Assets.xcassets in Resources */,
+				17F7BA571D1B43A300C1AECD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B5855216D9B546BB3715CDC /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8304F809B6D764FE9BD64D10 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProRTCSmapleIOS/Pods-ProRTCSmapleIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABC684F0548641D2487A5827 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProRTCSmapleIOS/Pods-ProRTCSmapleIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17F7BA451D1B43A300C1AECD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				177F0C3E1D1B893500BAD5AA /* MessageViewCell.m in Sources */,
+				17F7BA511D1B43A300C1AECD /* AppDelegate.m in Sources */,
+				177F0C3B1D1B88E800BAD5AA /* GrowingTextView.m in Sources */,
+				177F0C411D1B89E700BAD5AA /* ChatController.m in Sources */,
+				17F7BA9C1D1B4C3700C1AECD /* HomeController.m in Sources */,
+				177F0C361D1B838A00BAD5AA /* BBBadgeBarButtonItem.m in Sources */,
+				17F7BAA31D1B512D00C1AECD /* Reachability.m in Sources */,
+				17F7BAA61D1B524E00C1AECD /* Utils.m in Sources */,
+				17F7BA4E1D1B43A300C1AECD /* main.m in Sources */,
+				177F0C441D1B8A4900BAD5AA /* Message.m in Sources */,
+				17F7BAA91D1B545900C1AECD /* VideoCallController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		17F7BA551D1B43A300C1AECD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17F7BA561D1B43A300C1AECD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17F7BA5A1D1B43A300C1AECD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17F7BA5B1D1B43A300C1AECD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17F7BA5E1D1B43A300C1AECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17F7BA5F1D1B43A300C1AECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17F7BA611D1B43A300C1AECD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E27C8F339C126C452D95328 /* Pods-ProRTCSmapleIOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProRTC",
+				);
+				GCC_PREFIX_HEADER = "ProRTCSmapleIOS/ProRTCSampleIOS-prefix.pch";
+				INFOPLIST_FILE = ProRTCSmapleIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProRTC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codiant.ProRTCSmapleIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		17F7BA621D1B43A300C1AECD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99BE24F2D23D20EEFBA01D0C /* Pods-ProRTCSmapleIOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProRTC",
+				);
+				GCC_PREFIX_HEADER = "ProRTCSmapleIOS/ProRTCSampleIOS-prefix.pch";
+				INFOPLIST_FILE = ProRTCSmapleIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProRTC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.codiant.ProRTCSmapleIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17F7BA441D1B43A300C1AECD /* Build configuration list for PBXProject "ProRTCSmapleIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17F7BA5E1D1B43A300C1AECD /* Debug */,
+				17F7BA5F1D1B43A300C1AECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17F7BA601D1B43A300C1AECD /* Build configuration list for PBXNativeTarget "ProRTCSmapleIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17F7BA611D1B43A300C1AECD /* Debug */,
+				17F7BA621D1B43A300C1AECD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17F7BA411D1B43A300C1AECD /* Project object */;
+}

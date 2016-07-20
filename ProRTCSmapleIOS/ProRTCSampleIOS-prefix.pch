@@ -1,0 +1,18 @@
+//
+//  ProRTCSampleIOS-prefix.pch
+//  ProRTCSmapleIOS
+//
+//  Created by Utkarsh Singh on 6/22/16.
+//  Copyright © 2016 Codiant Software Technologies Pvt Ltd. All rights reserved.
+//
+
+#ifndef ProRTCSampleIOS_prefix_pch
+#define ProRTCSampleIOS_prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AppDelegate.h"
+#import "Utils.h"
+
+#endif /* ProRTCSampleIOS_prefix_pch */
