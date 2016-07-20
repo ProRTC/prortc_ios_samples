@@ -21,7 +21,7 @@ ProRTC iOS sample helps you to better understand the features of ProRTC library 
 The ProRTC library requires **Xcode 7+**.
 
 Import ProRTC library folder into your project which contains:
-* WebRTC.framework
+* libProRTCCore.a
 * libProRTC.a
 * Headers
 
@@ -421,15 +421,14 @@ else {
 ## Contributing
 If you want to contribute in WebRTC era, share your ideas, changes and modifications to provide more benifits to developers.
 
-## Known Issues
-None
+## 🔧 Known Issues
+None at this time.
 
+## 👑 Author
+[Codiant Software Technology Pvt Ltd](http://www.codiant.com).
 
-## Credits
-
-Maintained by [Codiant Software Technology Pvt Ltd](http://www.codiant.com).
-
-Library Author [Utkarsh Singh](https://in.linkedin.com/in/utkarsh07).
+## 📄 Change Log
+### See [Changelog.md]()
 
 ## License
 You're free to copy and modify the source code of ProRTC sample project for your own projects. See LICENSE for details.
