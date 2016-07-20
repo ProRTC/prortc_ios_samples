@@ -428,7 +428,7 @@ None at this time.
 [Codiant Software Technology Pvt Ltd](http://www.codiant.com).
 
 ## 📄 Change Log
-### See [Changelog.md]()
+### See [Changelog.md](https://github.com/ProRTC/prortc_ios_samples/blob/master/CHANGELOG.md)
 
 ## License
 You're free to copy and modify the source code of ProRTC sample project for your own projects. See LICENSE for details.
