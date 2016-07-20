@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Prortc ios samples by ProRTC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Prortc ios samples</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/ProRTC/prortc_ios_samples" class="btn">View on GitHub</a>
+      <a href="https://github.com/ProRTC/prortc_ios_samples/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ProRTC/prortc_ios_samples/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p><br></p>
+
+<p align="center">
+  <img src="ProRTC_logo.png" height="101" alt="ProRTC" title="ProRTC">
+</p>
+
+<p><br></p>
+
+<h1>
+<a id="prortc-ios-sample---a-webrtc-solution-for-ios" class="anchor" href="#prortc-ios-sample---a-webrtc-solution-for-ios" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ProRTC iOS Sample - A WebRTC Solution for iOS</h1>
+
+<p>ProRTC library provides the infrastructure needed to integrate Google native WebRTC in iOS apps. 
+It is a layer handcrafted over WebRTC native trunk code to obtain audio/video conferencing, text-chat, file sharing and other cool stuff.</p>
+
+<p>ProRTC iOS sample helps you to better understand the features of ProRTC library and demonstrates basic integration steps for providing support for the following features in your iPhone/iPad apps:</p>
+
+<ul>
+<li>1x1 Video conferencing.</li>
+<li>Text messaging.</li>
+<li>Data channels support.</li>
+</ul>
+
+<h1>
+<a id="if-you-have-any-feedback-doubts-or-feature-request-feel-free-and-email-us-at-supportprortccom" class="anchor" href="#if-you-have-any-feedback-doubts-or-feature-request-feel-free-and-email-us-at-supportprortccom" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>If you have any feedback, doubts or feature request, feel free and email us at <a href="mailto:support@prortc.com">support@prortc.com</a>
+</h1>
+
+<h1>
+<a id="project-setup" class="anchor" href="#project-setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Setup</h1>
+
+<p>The ProRTC library requires <strong>Xcode 7+</strong>.</p>
+
+<p>Import ProRTC library folder into your project which contains:</p>
+
+<ul>
+<li>libProRTCCore.a</li>
+<li>libProRTC.a</li>
+<li>Headers</li>
+</ul>
+
+<p>You can easily find these files in this sample project.</p>
+
+<p>The ProRTC library requires the following frameworks and libraries:</p>
+
+<ul>
+<li>UIKit.framework</li>
+<li>GLKit.framework</li>
+<li>CoreMedia.framework</li>
+<li>CoreGraphics.framework</li>
+<li>CoreVideo.framework</li>
+<li>AVFoundation.framework</li>
+<li>Foundation.framework</li>
+<li>Security.framework</li>
+<li>CFNetwork.framework</li>
+<li>AudioToolbox.framework</li>
+<li>VideoToolbox.framework</li>
+<li>CoreVideo.framework</li>
+<li>CoreAudio.framework</li>
+<li>OpenGLES.framework</li>
+<li>QuartzCore.framework</li>
+<li>libsqlite3.dylib</li>
+<li>libSystem.B.dylib</li>
+<li>libstdc++.6.0.9.dylib</li>
+<li>libicucore.A.dylib</li>
+<li>libc++.1.dylib</li>
+</ul>
+
+<p><strong>Final step: Other linker flag</strong></p>
+
+<p><strong>libProRTC.a</strong> includes few Objective-C categories of <strong>WebRTC.framework</strong> classes so we need to make sure that linker loads all categories and classes of static library properly:</p>
+
+<p>Goto your project <strong>Build settings</strong> and add <strong>-ObjC</strong> flag in <strong>Other linker flag</strong> section.</p>
+
+<h3>
+<a id="all-done-" class="anchor" href="#all-done-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>All done! <g-emoji alias="sunglasses" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png">😎</g-emoji>
+</h3>
+
+<h1>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h1>
+
+<p><strong>BUILD REQUIREMENTS:</strong></p>
+
+<p>iOS SDK 9.0 or later</p>
+
+<p><strong>RUNTIME REQUIREMENTS:</strong></p>
+
+<p>iOS 9.0 or later</p>
+
+<p>Supported on <strong>Wi-Fi</strong> and <strong>3G/4G/LTE</strong> connections.</p>
+
+<h1>
+<a id="architecture" class="anchor" href="#architecture" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Architecture</h1>
+
+<h3>
+<a id="class-references" class="anchor" href="#class-references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Class References</h3>
+
+<ul>
+<li><code>PWMediaSession</code></li>
+<li><code>PWMediaConfiguration</code></li>
+<li><code>PWDataFile</code></li>
+<li><code>PWRemotePeer</code></li>
+<li><code>PWRoom</code></li>
+</ul>
+
+<h3>
+<a id="protocol-references" class="anchor" href="#protocol-references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Protocol References</h3>
+
+<ul>
+<li><code>PWMediaSessionDelegate</code></li>
+</ul>
+
+<h3>
+<a id="constant-references" class="anchor" href="#constant-references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Constant References</h3>
+
+<ul>
+<li><code>PWAudioCodec</code></li>
+<li><code>PWCameraPosition</code></li>
+<li><code>PWConnectionState</code></li>
+<li><code>PWPixelFormat</code></li>
+<li><code>PWRendererType</code></li>
+<li><code>PWVideoCodec</code></li>
+<li><code>kWebSocketErrorCode</code></li>
+</ul>
+
+<h3>
+<a id="category-references" class="anchor" href="#category-references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Category References</h3>
+
+<ul>
+<li><code>RTCMediaStream(Configuration)</code></li>
+<li><code>RTCVideoTrack(Renderer)</code></li>
+</ul>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h1>
+
+<p>Before getting started, let’s discuss some of the most important classes you’ll be using in this project:</p>
+
+<h3>
+<a id="pwmediasession" class="anchor" href="#pwmediasession" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PWMediaSession</h3>
+
+<p>The <code>PWMediaSession</code> class manages the execution of WebRTC operations such as: handling <code>offer/answer</code>, <code>ICE</code>, renegotiation, data transfer and other media activities.</p>
+
+<p><code>PWMediaSession’s</code> delegate methods—defined by the <code>PWMediaSessionDelegate</code> protocol—allow an object to receive callbacks regarding the success or failure of an operation.</p>
+
+<h3>
+<a id="pwmediaconfiguration" class="anchor" href="#pwmediaconfiguration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PWMediaConfiguration</h3>
+
+<p>The <code>PWMediaConfiguration</code> class manages Media properties and configuration.</p>
+
+<p><code>PWMediaConfiguration</code> provides support for the following features:</p>
+
+<ul>
+<li>Rendering.</li>
+<li>Audio/Video codecs.</li>
+<li>Audio/Video bandwidth control.</li>
+<li>Frame rate &amp; pixel formats.</li>
+<li>Computes prefered receiving video format on the basis of device capabilities and performance.</li>
+</ul>
+
+<h3>
+<a id="initialization" class="anchor" href="#initialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialization</h3>
+
+<p>Import ProRTC library header file:</p>
+
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">"</span>ProRTC.h<span class="pl-pds">"</span></span></pre></div>
+
+<p><code>PWMediaSession</code> is the main class used to perform WebRTC operations. Your class must conforms its protocol <code>PWMediaSessionDelegate</code>.</p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">@interface</span> <span class="pl-en">ViewController</span> () &lt;PWMediaSessionDelegate&gt;
+
+<span class="pl-k">@end</span></pre></div>
+
+<ul>
+<li>
+<code>PWMediaSessionDelegate</code> - Handles events when remote client connects and disconnect states. Also, handles events when local and remote video feeds are received.</li>
+</ul>
+
+<p>Create a property of <code>PWMediaSession</code>, using this session you'll be doing all WebRTC operations.</p>
+
+<div class="highlight highlight-source-objc"><pre>@property (strong, nonatomic) PWMediaSession *mediaSession;</pre></div>
+
+<h3>
+<a id="rendering" class="anchor" href="#rendering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rendering</h3>
+
+<p><code>RTCEAGLVideoView</code> is used for rendering of Local and Remote videos so create two properties of <code>RTCEAGLVideoView</code>.</p>
+
+<ul>
+<li>One for <code>Remote</code>.</li>
+<li>One for <code>Local</code>.</li>
+</ul>
+
+<p>You can also use <code>storyboard</code>, create two simple <code>UIView</code>'s and set <code>RTCEAGLVideoView</code> as a <code>Custom class</code>.</p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-c">// remoteVideoView: An object of RTCEAGLVideoView to show remote video.</span>
+@property (weak, nonatomic) <span class="pl-k">IBOutlet</span> RTCEAGLVideoView *remoteVideoView;
+
+<span class="pl-c">// localVideoView: An object of RTCEAGLVideoView to show local camera video.</span>
+@property (weak, nonatomic) <span class="pl-k">IBOutlet</span> RTCEAGLVideoView *localVideoView;</pre></div>
+
+<p>For handling received media data - create properties of <code>RTCVideoTrack</code>: </p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-c">// RTCVideoTrack objects to hold local and remote videos data.</span>
+@property (strong, nonatomic) RTCVideoTrack *localVideoTrack;
+@property (strong, nonatomic) RTCVideoTrack *remoteVideoTrack;</pre></div>
+
+<h3>
+<a id="go-live" class="anchor" href="#go-live" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Go Live</h3>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-c">// Initialize session.</span>
+self.mediaSession = [PWMediaSession <span class="pl-c1">sharedInstance</span>];
+
+<span class="pl-c">// Start video call.</span>
+<span class="pl-c">// @param: room name or any unique identifier.</span>
+<span class="pl-c">// @param: participant id --</span>
+<span class="pl-c">// @param: participant name --</span>
+<span class="pl-c">// @param: delegate &lt;PWMediaSessionDelegate&gt;</span>
+<span class="pl-c">//</span>
+<span class="pl-c">// It's just a sample and we're not maintaining user data so [NSUUID UUID] is a best option for unique id of participant.</span>
+<span class="pl-c">// You can pass your own values If you want.</span>
+<span class="pl-c">//</span>
+
+<span class="pl-c1">NSString</span> *GUID = [<span class="pl-c1">NSUUID</span> <span class="pl-c1">UUID</span>].UUIDString;
+<span class="pl-c1">NSString</span> *name = [UIDevice <span class="pl-c1">currentDevice</span>].name;
+
+[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">startVideoCall:</span><span class="pl-v">self</span>.roomName <span class="pl-c1">participant:</span>GUID <span class="pl-c1">displayName:</span>name <span class="pl-c1">delegate:</span><span class="pl-v">self</span>];
+</pre></div>
+
+<p><br>
+<b>Video call with custom media configuration:</b>
+You can change these properties according to your requirement. If you do not - By default best configuration will be used.</p>
+
+<p>For more details: see <code>PWMediaConfiguration.h</code></p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-c">//</span>
+<span class="pl-c">// Default media configuration:</span>
+<span class="pl-c">//</span>
+<span class="pl-c">// Audio codec: Opus audio codec (good quality)</span>
+<span class="pl-c">// Audio bandiwidth limit: 64</span>
+<span class="pl-c">// Video codec: Software (VP8)</span>
+<span class="pl-c">// Video renderer: OpenGLES 2.0</span>
+<span class="pl-c">// Video bandwidth limit: 512 // must be greater than 300, If you really want to see other participant's face. :P</span>
+<span class="pl-c">// Video format: 640 x 480</span>
+<span class="pl-c">// Frame rate: @30 // varies according to the device performance.</span>
+<span class="pl-c">// Camera position: front</span>
+<span class="pl-c">//</span>
+PWMediaConfiguration *config = [PWMediaConfiguration <span class="pl-c1">defaultConfiguration</span>];
+
+[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">startVideoCall:</span><span class="pl-v">self</span>.roomName <span class="pl-c1">participant:</span>GUID <span class="pl-c1">displayName:</span>name <span class="pl-c1">delegate:</span><span class="pl-v">self</span> <span class="pl-c1">configuration:</span>config];
+</pre></div>
+
+<p><br>
+<b>For Audio only call:</b></p>
+
+<div class="highlight highlight-source-objc"><pre>[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">startAudioCall:</span><span class="pl-v">self</span>.roomName <span class="pl-c1">participant:</span>GUID <span class="pl-c1">displayName:</span>name <span class="pl-c1">delegate:</span><span class="pl-v">self</span>];</pre></div>
+
+<h3>
+<a id="delegates" class="anchor" href="#delegates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Delegates</h3>
+
+<p><b>Connection state:</b></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)mediaSession:(PWMediaSession *)session didChangeState:(PWConnectionState)state
+{
+    <span class="pl-k">switch</span> (state) {
+        <span class="pl-k">case</span> PWConnectionStateConnecting:
+            <span class="pl-c">// connecting...</span>
+            <span class="pl-k">break</span>;
+        <span class="pl-k">case</span> PWConnectionStateConnected:
+            <span class="pl-c">// connected...</span>
+            <span class="pl-k">break</span>;
+        <span class="pl-k">case</span> PWConnectionStateDisconnected:
+            <span class="pl-c">// disconnected...</span>
+            <span class="pl-k">break</span>;
+        <span class="pl-k">default</span>:
+            <span class="pl-k">break</span>;
+    }
+}
+
+- (<span class="pl-k">void</span>)mediaSession:(PWMediaSession *)session didConnectToRoom:(PWRoom *)room
+{
+    <span class="pl-c">// successfully connected to room...</span>
+}</pre></div>
+
+<p><b>A/V:</b></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)mediaSession:(PWMediaSession *)session didAddLocalStream:(RTCMediaStream *)localStream
+{
+    <span class="pl-c">// No need of rendering in case of audio conferencing.</span>
+    <span class="pl-k">if</span> (localStream.<span class="pl-smi">isVideoTrackAvailable</span>) {
+
+        <span class="pl-c">// save video track of media stream.</span>
+        self.<span class="pl-smi">localVideoTrack</span> = localStream.<span class="pl-smi">videoTracks</span>[<span class="pl-c1">0</span>];
+
+        <span class="pl-c">// start rendering of local camera video.</span>
+        [<span class="pl-v">self</span>.localVideoTrack <span class="pl-c1">bindRendererView:</span><span class="pl-v">self</span>.localVideoView];
+    }
+}
+
+- (<span class="pl-k">void</span>)mediaSession:(PWMediaSession *)session didAddRemoteStream:(RTCMediaStream *)remoteStream ofPeer:(PWRemotePeer *)remotePeer
+{
+    <span class="pl-c">// No need of rendering in case of audio conferencing.</span>
+    <span class="pl-k">if</span> (remoteStream.<span class="pl-smi">isVideoTrackAvailable</span>) {
+
+        <span class="pl-c">// save video track of media stream.</span>
+        self.<span class="pl-smi">remoteVideoTrack</span> = remoteStream.<span class="pl-smi">videoTracks</span>[<span class="pl-c1">0</span>];
+
+        <span class="pl-c">// start rendering of remote camera video.</span>
+        [<span class="pl-v">self</span>.remoteVideoTrack <span class="pl-c1">bindRendererView:</span><span class="pl-v">self</span>.remoteVideoView];
+    }
+}</pre></div>
+
+<p><b>Failure:</b></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)mediaSession:(PWMediaSession *)session didFailWithError:(<span class="pl-c1">NSError</span> *)error
+{
+    <span class="pl-c">// For performing different operations on different error.</span>
+    <span class="pl-c">// @See: kWebSocketErrorCode (defined in PWTypes.h)</span>
+}</pre></div>
+
+<h3>
+<a id="-text-messaging-and-data-transfer" class="anchor" href="#-text-messaging-and-data-transfer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji alias="star" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png">⭐</g-emoji> Text messaging and Data transfer</h3>
+
+<p><b>ProRTC</b> uses <code>Data Channels</code> for transferring any type of data, with the help of datachannels you can transfer files or even you can also send text messages.
+If datachannels are not enabled, file sharing will not work but text messaging will.
+By default session checks, If datachannels are enabled private messages will be sent through channels not server.
+If disabled, messages will be sent through server.</p>
+
+<p>You can use this feature by simply adding one line of code <g-emoji alias="wink" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png">😉</g-emoji></p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-en">PWMediaSessionEnableDataChannels</span>(<span class="pl-c1">YES</span>);</pre></div>
+
+<p><b>NOTE:</b> This line of code must be written before initiating call. Do not forget to disbale it, If not using, It'll save processing time.</p>
+
+<p>File transfer is a very important and little bit complex part of communication. In <b>ProRTC</b> we've focused on so many points to make this feature easy to integrate.</p>
+
+<p>Developers want to know everything:</p>
+
+<ul>
+<li>When file sending process started.</li>
+<li>How much data is sent or received.</li>
+<li>When file receiving process finished. and much more</li>
+</ul>
+
+<p>So we've provided functions and properties to handle this giant process. We're regularly working on this to make it more simpler but as of now lets see what we have:</p>
+
+<p><br>
+<b>Sending Text message</b></p>
+
+<div class="highlight highlight-source-objc"><pre>[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">sendMessage:</span>message.text <span class="pl-c1">toPeer:</span>&lt;recipient_id&gt;];</pre></div>
+
+<p><b>Sending file</b></p>
+
+<div class="highlight highlight-source-objc"><pre>[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">sendFileData:</span>&lt;<span class="pl-c1">NSData</span>&gt; <span class="pl-c1">withFileName:</span>&lt;fileName&gt; <span class="pl-c1">ofType:</span>&lt;fileExt&gt; <span class="pl-c1">toPeer:</span>&lt;recipient_id&gt; <span class="pl-c1">streamId:</span>[<span class="pl-c1">NSUUID</span> <span class="pl-c1">UUID</span>].UUIDString];</pre></div>
+
+<p><b>NOTE:</b> If <code>Data channels</code> are not enabled, this method won't work.
+<br><b>PERFORMANCE:</b> Sending large files required needs great Internet speed. Keep it in mind If network speed is slow do not try to send large files OR multiple files at the same time, It'll degrade your video call performance. If not using <b>Wi-Fi</b>: data charges may apply.</p>
+
+<p><br></p>
+
+<h3>
+<a id="delegates-1" class="anchor" href="#delegates-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Delegates</h3>
+
+<p><b>Called when <code>session</code> receives new Text message in room (Common for both public/private messages)</b></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)mediaSession:(PWMediaSession *)session didReceiveTextMessage:(<span class="pl-c1">NSString</span> *)message ofPeer:(PWRemotePeer *)remotePeer
+{
+    <span class="pl-c">// message: text message.</span>
+    <span class="pl-c">// remotePeer: sender of message.</span>
+}</pre></div>
+
+<p><br>
+<b>Called only once when <code>session</code> starts receiving new file</b> - <code>PWDataFile</code> object holds all the information of incoming file.
+Each file transfer process is represented by unique identifier <code>data_id</code> (defined in <code>PWDataFile.h</code>), you can use this <code>data_id</code> to identify which operation is for which file.</p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)mediaSession:(PWMediaSession *)session didStartReceivingDocument:(PWDataFile *)document
+{
+
+}</pre></div>
+
+<p><b>NOTE:</b> In this delegate, you may not be able to get few details of file because file is not received yet!</p>
+
+<p><br>
+<b>Called when <code>session</code> successfully received file</b></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)mediaSession:(PWMediaSession *)session didFinishReceivingDocument:(PWDataFile *)document atURL:(<span class="pl-c1">NSURL</span> *)url ofPeer:(PWRemotePeer *)remotePeer
+{
+  <span class="pl-c">// document: object of received file.</span>
+  <span class="pl-c">// url: path of document directory where received file is saved.</span>
+  <span class="pl-c">// remotePeer: sender of file.</span>
+}</pre></div>
+
+<p><br>
+<b>Sending/Receiving Progress: This is a big one <g-emoji alias="smiley" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f603.png">😃</g-emoji></b>
+Above two delegate tells about start/finish but what about the scene in between, don't worry we have functions for this too <g-emoji alias="wink" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png">😉</g-emoji></p>
+
+<p><b>Receiving progress</b></p>
+
+<p>For getting file receiving progress, add this property block - Callback when file receiving progress changes.</p>
+
+<div class="highlight highlight-source-objc"><pre>self.mediaSession.onDocumentReceivingProgress = ^ (PWDataFile *document, <span class="pl-k">float</span> progress) {
+    <span class="pl-c">// find your file object using predicate or some other way </span>
+    <span class="pl-c">// which you've saved previously in &lt;didStartReceivingDocument&gt; method.</span>
+    <span class="pl-c">// update progress.</span>
+};</pre></div>
+
+<p><b>Sending progress</b></p>
+
+<p>For getting file sending progress, add this property block - Callback when file sending progress changes.</p>
+
+<div class="highlight highlight-source-objc"><pre>self.mediaSession.onDocumentSendingProgress = ^(<span class="pl-c1">NSString</span> *data_id, <span class="pl-k">float</span> progress) {
+
+};</pre></div>
+
+<p><b>NOTE:</b> This block doesn't return <code>PWDataFile</code> object because you're the sender and you should have all the information about your file. It only tells you how much data you've sent and how much is remaining.
+<br></p>
+
+<h3>
+<a id="extras-" class="anchor" href="#extras-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extras <g-emoji alias="sunglasses" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60e.png">😎</g-emoji>
+</h3>
+
+<p><b>To check Audio/Video access permission</b></p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (self.mediaSession.videoAuthorized) {
+
+}
+
+<span class="pl-k">if</span> (self.mediaSession.audioAuthorized) {
+
+}</pre></div>
+
+<p><b>Use this to stop device to going in sleep mode during conferencing</b>
+<br>default is <code>NO</code></p>
+
+<div class="highlight highlight-source-objc"><pre>[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">setIdleTimerDisabled:</span><span class="pl-c1">YES</span>];</pre></div>
+
+<p>Don't forget to reset it in your <code>End call</code> action or in <code>AppDelegate</code> methods <code>applicationDidEnterBackground</code> OR <code>applicationWillTerminate</code> by simply using this line of code:</p>
+
+<ul>
+<li>
+<code>[[UIApplication sharedApplication] setIdleTimerDisabled:NO];</code> OR</li>
+<li><code>[self.mediaSession setIdleTimerDisabled:NO];</code></li>
+</ul>
+
+<p><b>Switching Camera</b></p>
+
+<div class="highlight highlight-source-objc"><pre><span class="pl-k">if</span> (self.mediaSession.cameraPosition == PWCameraPositionFront) {
+    [<span class="pl-v">self</span>.mediaSession <span class="pl-c1">switchCameraPosition:</span>PWCameraPositionBack];
+}
+<span class="pl-k">else</span> {
+      [<span class="pl-v">self</span>.mediaSession <span class="pl-c1">switchCameraPosition:</span>PWCameraPositionFront];
+}</pre></div>
+
+<p><b>Mute/UnMute A/V</b></p>
+
+<div class="highlight highlight-source-objc"><pre>[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">stopMic</span>];
+[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">startMic</span>];
+
+[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">stopCamera</span>];
+[<span class="pl-v">self</span>.mediaSession <span class="pl-c1">startCamera</span>];</pre></div>
+
+<p><br>
+<b>For More Details: See <code>PWMediaSession.h</code></b></p>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>If you want to contribute in WebRTC era, share your ideas, changes and modifications to provide more benifits to developers.</p>
+
+<h2>
+<a id="-known-issues" class="anchor" href="#-known-issues" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji alias="wrench" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji> Known Issues</h2>
+
+<p>None at this time.</p>
+
+<h2>
+<a id="-author" class="anchor" href="#-author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji alias="crown" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f451.png">👑</g-emoji> Author</h2>
+
+<p><a href="http://www.codiant.com">Codiant Software Technology Pvt Ltd</a>.</p>
+
+<h2>
+<a id="-change-log" class="anchor" href="#-change-log" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji alias="page_facing_up" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4c4.png">📄</g-emoji> Change Log</h2>
+
+<h3>
+<a id="see-changelogmd" class="anchor" href="#see-changelogmd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>See <a href="https://github.com/ProRTC/prortc_ios_samples/blob/master/CHANGELOG.md">Changelog.md</a>
+</h3>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>You're free to copy and modify the source code of ProRTC sample project for your own projects. See LICENSE for details.</p>
+
+<h1>
+<a id="if-you-have-any-feedback-doubts-or-feature-request-feel-free-and-email-us-at-supportprortccom-1" class="anchor" href="#if-you-have-any-feedback-doubts-or-feature-request-feel-free-and-email-us-at-supportprortccom-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>If you have any feedback, doubts or feature request, feel free and email us at <a href="mailto:support@prortc.com">support@prortc.com</a>
+</h1>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ProRTC/prortc_ios_samples">Prortc ios samples</a> is maintained by <a href="https://github.com/ProRTC">ProRTC</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
