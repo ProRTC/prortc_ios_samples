@@ -14,7 +14,7 @@ ProRTC iOS sample helps you to better understand the features of ProRTC library 
  - Text messaging.
  - Data channels support.
 
-# If you have any feedback, doubts or feature request, feel free and email us at support@prortc.com
+# If you have any feedback, doubts or feature request, feel free to email us at support@prortc.com
 
 # Project Setup
 
@@ -112,7 +112,7 @@ The `PWMediaConfiguration` class manages Media properties and configuration.
 - Audio/Video codecs.
 - Audio/Video bandwidth control.
 - Frame rate & pixel formats.
-- Computes prefered receiving video format on the basis of device capabilities and performance.
+- Computes preferred receiving video format on the basis of device capabilities and performance.
 
 ### Initialization
 
@@ -287,14 +287,14 @@ You can use this feature by simply adding one line of code 😉
 ```objective-c
 PWMediaSessionEnableDataChannels(YES);
 ```
-<b>NOTE:</b> This line of code must be written before initiating call. Do not forget to disbale it, If not using, It'll save processing time.
+<b>NOTE:</b> This line of code must be written before initiating call. Do not forget to disable it, if not using, It'll save processing time.
 
 File transfer is a very important and little bit complex part of communication. In <b>ProRTC</b> we've focused on so many points to make this feature easy to integrate.
 
 Developers want to know everything:
 - When file sending process started.
 - How much data is sent or received.
-- When file receiving process finished. and much more
+- When file receiving process finished and much more.
 
 So we've provided functions and properties to handle this giant process. We're regularly working on this to make it more simpler but as of now lets see what we have:
 
@@ -309,7 +309,7 @@ So we've provided functions and properties to handle this giant process. We're r
 [self.mediaSession sendFileData:<NSData> withFileName:<fileName> ofType:<fileExt> toPeer:<recipient_id> streamId:[NSUUID UUID].UUIDString];
 ```
 <b>NOTE:</b> If `Data channels` are not enabled, this method won't work.
-<br><b>PERFORMANCE:</b> Sending large files required needs great Internet speed. Keep it in mind If network speed is slow do not try to send large files OR multiple files at the same time, It'll degrade your video call performance. If not using <b>Wi-Fi</b>: data charges may apply.
+<br><b>PERFORMANCE:</b> Sending large files requires great Internet speed. Keep it in mind if network speed is slow do not try to send large files OR multiple files at the same time, It'll degrade your video call performance. If not using <b>Wi-Fi</b>: data charges may apply.
 
 <br>
 ### Delegates
@@ -419,7 +419,7 @@ else {
 <b>For More Details: See `PWMediaSession.h`</b>
 
 ## Contributing
-If you want to contribute in WebRTC era, share your ideas, changes and modifications to provide more benifits to developers.
+If you want to contribute in WebRTC era, share your ideas, changes and modifications to provide more benefits to developers.
 
 ## 🔧 Known Issues
 None at this time.
@@ -433,4 +433,4 @@ None at this time.
 ## License
 You're free to copy and modify the source code of ProRTC sample project for your own projects. See LICENSE for details.
 
-# If you have any feedback, doubts or feature request, feel free and email us at support@prortc.com
+# If you have any feedback, doubts or feature request, feel free to email us at support@prortc.com
