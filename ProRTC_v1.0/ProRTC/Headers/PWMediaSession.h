@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
 
+// prortc
 #import "PWMediaConfiguration.h"
 
 @class PWMediaSession;
@@ -17,7 +18,7 @@
 @class PWRoom;
 @class PWDataFile;
 @class PWStatsBuilder;
-@class RTCMediaStream;
+@class PWMediaStream;
 
 
 /**
@@ -138,24 +139,24 @@ UIKIT_EXTERN void PWMediaSessionEnableDataChannels(BOOL enable);
  * Sent when client got `user-media`.
  *
  * @param session The <PWMediaSession> instance that sent this message.
- * @param localStream The <RTCMediaStream> A combined object of Audio/Video tracks.
+ * @param localStream <PWMediaStream> object of webrtc local media stream interface.
  *
  * * for getting audio: <code>[localStream.audioTracks objectAtIndex:0]</code>
  * * for getting video: <code>[localStream.videoTracks objectAtIndex:0]</code>
  */
-- (void)mediaSession:(PWMediaSession *)session didAddLocalStream:(RTCMediaStream *)localStream;
+- (void)mediaSession:(PWMediaSession *)session didAddLocalStream:(PWMediaStream *)localStream;
 
 /**
  * Sent when client got remote client `user-media`.
  *
  * @param session The <PWMediaSession> instance that sent this message.
- * @param remoteStream The <RTCMediaStream> A combined object of Audio/Video tracks.
+ * @param remoteStream <PWMediaStream> object of webrtc remote media stream interface.
  *
  * * for getting audio: <code>[remoteStream.audioTracks objectAtIndex:0]</code>
  * * for getting video: <code>[remoteStream.videoTracks objectAtIndex:0]</code>
  * @param remotePeer The <PWRemotePeer> instance that represents remote client of incoming media.
  */
-- (void)mediaSession:(PWMediaSession *)session didAddRemoteStream:(RTCMediaStream *)remoteStream ofPeer:(PWRemotePeer *)remotePeer;
+- (void)mediaSession:(PWMediaSession *)session didAddRemoteStream:(PWMediaStream *)remoteStream ofPeer:(PWRemotePeer *)remotePeer;
 
 
 @optional

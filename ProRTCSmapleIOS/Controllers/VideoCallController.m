@@ -27,11 +27,11 @@
     NSUInteger unreadCount;
 }
 
-// remoteVideoView: An object of RTCEAGLVideoView to show remote video.
-@property (weak, nonatomic) IBOutlet RTCEAGLVideoView *remoteVideoView;
+// remoteVideoView: An object of PWEAGLVideoView to show remote video.
+@property (weak, nonatomic) IBOutlet PWEAGLVideoView *remoteVideoView;
 
-// localVideoView: An object of RTCEAGLVideoView to show local camera video.
-@property (weak, nonatomic) IBOutlet RTCEAGLVideoView *localVideoView;
+// localVideoView: An object of PWEAGLVideoView to show local camera video.
+@property (weak, nonatomic) IBOutlet PWEAGLVideoView *localVideoView;
 
 // cameraDisableView: Placeholder view to show when user stops publishing video.
 @property (weak, nonatomic) IBOutlet UIView *cameraDisableView;
@@ -47,9 +47,9 @@
 @property (strong, nonatomic) PWMediaSession *mediaSession;
 
 
-// RTCVideoTrack objects to hold local and remote videos data.
-@property (strong, nonatomic) RTCVideoTrack *localVideoTrack;
-@property (strong, nonatomic) RTCVideoTrack *remoteVideoTrack;
+// PWVideoTrack objects to hold local and remote videos data.
+@property (strong, nonatomic) PWVideoTrack *localVideoTrack;
+@property (strong, nonatomic) PWVideoTrack *remoteVideoTrack;
 
 
 // you can also create PWMediaConfiguration object, If you want to set custom media properties.
@@ -336,7 +336,7 @@
     }
 }
 
-- (void)mediaSession:(PWMediaSession *)session didAddLocalStream:(RTCMediaStream *)localStream
+- (void)mediaSession:(PWMediaSession *)session didAddLocalStream:(PWMediaStream *)localStream
 {
     // No need of rendering in case of audio conferencing.
     if (localStream.isVideoTrackAvailable) {
@@ -352,7 +352,7 @@
     [self.mediaSession setIdleTimerDisabled:YES];
 }
 
-- (void)mediaSession:(PWMediaSession *)session didAddRemoteStream:(RTCMediaStream *)remoteStream ofPeer:(PWRemotePeer *)remotePeer
+- (void)mediaSession:(PWMediaSession *)session didAddRemoteStream:(PWMediaStream *)remoteStream ofPeer:(PWRemotePeer *)remotePeer
 {
     // No need of rendering in case of audio conferencing.
     if (remoteStream.isVideoTrackAvailable) {
@@ -478,10 +478,6 @@
     // remove stored videos data.
     self.localVideoTrack = nil;
     self.remoteVideoTrack = nil;
-    
-    // remove rendered layer.
-    [self.localVideoView renderFrame:nil];
-    [self.remoteVideoView renderFrame:nil];
     
     // end call.
     [self.mediaSession endCall];

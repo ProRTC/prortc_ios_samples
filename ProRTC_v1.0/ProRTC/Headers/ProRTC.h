@@ -13,7 +13,6 @@
 #import "PWMediaConfiguration.h"
 #import "PWErrorCode.h"
 #import "PWStatsBuilder.h"
-
-#import "RTCEAGLVideoView.h"
-#import "RTCMediaStream+Configuration.h"
-#import "RTCVideoTrack+Renderer.h"
+#import "PWMediaStream.h"
+#import "PWVideoTrack.h"
+#import "PWEAGLVideoView.h"
