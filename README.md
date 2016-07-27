@@ -51,7 +51,7 @@ The ProRTC library requires the following frameworks and libraries:
 
 **Final step: Other linker flag**
 
-**libProRTC.a** includes few Objective-C categories of **WebRTC.framework** classes so we need to make sure that linker loads all categories and classes of static library properly:
+**libProRTC.a** includes few Objective-C categories of **WebRTC** classes so we need to make sure that linker loads all categories and classes of static library properly:
 
 Goto your project **Build settings** and add **-ObjC** flag in **Other linker flag** section.
 
@@ -73,6 +73,10 @@ Supported on **Wi-Fi** and **3G/4G/LTE** connections.
 
 ### Class References
 - `PWMediaSession`
+- `PWMediaStream`
+- `PWEAGLVideoView`
+- `PWVideoTrack`
+- `PWStatsBuilder`
 - `PWMediaConfiguration`
 - `PWDataFile`
 - `PWRemotePeer`
@@ -89,10 +93,6 @@ Supported on **Wi-Fi** and **3G/4G/LTE** connections.
 - `PWRendererType`
 - `PWVideoCodec`
 - `kWebSocketErrorCode`
-
-### Category References
-- `RTCMediaStream(Configuration)`
-- `RTCVideoTrack(Renderer)`
 
 # Usage
 
@@ -138,26 +138,26 @@ Create a property of `PWMediaSession`, using this session you'll be doing all We
 
 ### Rendering
 
-`RTCEAGLVideoView` is used for rendering of Local and Remote videos so create two properties of `RTCEAGLVideoView`.
+`PWEAGLVideoView` is used for rendering of Local and Remote videos so create two properties of `PWEAGLVideoView`.
 - One for `Remote`.
 - One for `Local`.
 
-You can also use `storyboard`, create two simple `UIView`'s and set `RTCEAGLVideoView` as a `Custom class`.
+You can also use `storyboard`, create two simple `UIView`'s and set `PWEAGLVideoView` as a `Custom class`.
 
 ```objective-c
-// remoteVideoView: An object of RTCEAGLVideoView to show remote video.
-@property (weak, nonatomic) IBOutlet RTCEAGLVideoView *remoteVideoView;
+// remoteVideoView: An object of PWEAGLVideoView to show remote video.
+@property (weak, nonatomic) IBOutlet PWEAGLVideoView *remoteVideoView;
 
-// localVideoView: An object of RTCEAGLVideoView to show local camera video.
-@property (weak, nonatomic) IBOutlet RTCEAGLVideoView *localVideoView;
+// localVideoView: An object of PWEAGLVideoView to show local camera video.
+@property (weak, nonatomic) IBOutlet PWEAGLVideoView *localVideoView;
 ```
 
-For handling received media data - create properties of `RTCVideoTrack`: 
+For handling received media data - create properties of `PWVideoTrack`: 
 
 ```objective-c
-// RTCVideoTrack objects to hold local and remote videos data.
-@property (strong, nonatomic) RTCVideoTrack *localVideoTrack;
-@property (strong, nonatomic) RTCVideoTrack *remoteVideoTrack;
+// PWVideoTrack objects to hold local and remote videos data.
+@property (strong, nonatomic) PWVideoTrack *localVideoTrack;
+@property (strong, nonatomic) PWVideoTrack *remoteVideoTrack;
 ```
 ### Go Live
 
@@ -239,7 +239,7 @@ PWMediaConfiguration *config = [PWMediaConfiguration defaultConfiguration];
 
 <b>A/V:</b>
 ```objective-c
-- (void)mediaSession:(PWMediaSession *)session didAddLocalStream:(RTCMediaStream *)localStream
+- (void)mediaSession:(PWMediaSession *)session didAddLocalStream:(PWMediaStream *)localStream
 {
     // No need of rendering in case of audio conferencing.
     if (localStream.isVideoTrackAvailable) {
@@ -252,7 +252,7 @@ PWMediaConfiguration *config = [PWMediaConfiguration defaultConfiguration];
     }
 }
 
-- (void)mediaSession:(PWMediaSession *)session didAddRemoteStream:(RTCMediaStream *)remoteStream ofPeer:(PWRemotePeer *)remotePeer
+- (void)mediaSession:(PWMediaSession *)session didAddRemoteStream:(PWMediaStream *)remoteStream ofPeer:(PWRemotePeer *)remotePeer
 {
     // No need of rendering in case of audio conferencing.
     if (remoteStream.isVideoTrackAvailable) {
