@@ -1,33 +1,38 @@
 <br>
 <p align="center" >
+<a href="http://prortc.com/">
   <img src="ProRTC_logo.png" height="101" alt="ProRTC" title="ProRTC">
+</a>
 </p>
 <br>
 # ProRTC iOS Sample - A WebRTC Solution for iOS
 
-ProRTC library provides the infrastructure needed to integrate Google native WebRTC in iOS apps. 
+ProRTC framework provides the infrastructure needed to integrate Google native WebRTC in iOS apps. 
 It is a layer handcrafted over WebRTC native trunk code to obtain audio/video conferencing, text-chat, file sharing and other cool stuff.
 
-ProRTC iOS sample helps you to better understand the features of ProRTC library and demonstrates basic integration steps for providing support for the following features in your iPhone/iPad apps:
+ProRTC iOS sample helps you to better understand the features of ProRTC and demonstrates basic integration steps for providing support for the following features in your iPhone/iPad apps:
 
  - 1x1 Video conferencing.
  - Text messaging.
  - Data channels support.
 
+[Download SDK](http://prortc.com/).
+<br>
+[ProRTC Framework Reference](http://prortc.com/document/).
+<br>
+For more visit [ProRTC](http://prortc.com/).
+
 # If you have any feedback, doubts or feature request, feel free to email us at support@prortc.com
 
 # Project Setup
 
-The ProRTC library requires **Xcode 7+**.
+The ProRTC requires **Xcode 7+**.
 
-Import ProRTC library folder into your project which contains:
-* libProRTCCore.a
-* libProRTC.a
-* Headers
+Drag & drop `ProRTC.framework` into your project.
 
 You can easily find these files in this sample project.
 
-The ProRTC library requires the following frameworks and libraries:
+The ProRTC framework requires the following frameworks and libraries:
 * UIKit.framework
 * GLKit.framework
 * CoreMedia.framework
@@ -50,8 +55,6 @@ The ProRTC library requires the following frameworks and libraries:
 * libc++.1.dylib
 
 **Final step: Other linker flag**
-
-**libProRTC.a** includes few Objective-C categories of **WebRTC** classes so we need to make sure that linker loads all categories and classes of static library properly:
 
 Goto your project **Build settings** and add **-ObjC** flag in **Other linker flag** section.
 
@@ -116,9 +119,9 @@ The `PWMediaConfiguration` class manages Media properties and configuration.
 
 ### Initialization
 
-Import ProRTC library header file:
+Import ProRTC.framework header file:
 ```objective-c
-#import "ProRTC.h"
+#import <ProRTC/ProRTC.h>
 ```
 
 `PWMediaSession` is the main class used to perform WebRTC operations. Your class must conforms its protocol `PWMediaSessionDelegate`.
@@ -426,6 +429,8 @@ None at this time.
 
 ## 👑 Author
 [Codiant Software Technology Pvt Ltd](http://www.codiant.com).
+<br>
+[ProRTC project authors](http://prortc.com/).
 
 ## 📄 Change Log
 ### See [Changelog.md](https://github.com/ProRTC/prortc_ios_samples/blob/master/CHANGELOG.md)
