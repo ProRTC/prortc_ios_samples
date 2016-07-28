@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		177E16F41D4970F700A00B87 /* libProRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 177E16F21D4970F700A00B87 /* libProRTC.a */; };
-		177E16F51D4970F700A00B87 /* libProRTCCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 177E16F31D4970F700A00B87 /* libProRTCCore.a */; };
 		177F0C361D1B838A00BAD5AA /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C351D1B838A00BAD5AA /* BBBadgeBarButtonItem.m */; };
 		177F0C3B1D1B88E800BAD5AA /* GrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C3A1D1B88E800BAD5AA /* GrowingTextView.m */; };
 		177F0C3E1D1B893500BAD5AA /* MessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C3D1D1B893500BAD5AA /* MessageViewCell.m */; };
 		177F0C411D1B89E700BAD5AA /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C401D1B89E700BAD5AA /* ChatController.m */; };
 		177F0C441D1B8A4900BAD5AA /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C431D1B8A4900BAD5AA /* Message.m */; };
+		179BBA211D4A8F0E003D701E /* ProRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179BBA201D4A8F0E003D701E /* ProRTC.framework */; };
 		17F7BA4E1D1B43A300C1AECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BA4D1D1B43A300C1AECD /* main.m */; };
 		17F7BA511D1B43A300C1AECD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BA501D1B43A300C1AECD /* AppDelegate.m */; };
 		17F7BA571D1B43A300C1AECD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F7BA551D1B43A300C1AECD /* Main.storyboard */; };
@@ -46,22 +45,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		177E16E01D4970E700A00B87 /* HowToUse.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = HowToUse.markdown; path = ProRTC_v1.0/HowToUse.markdown; sourceTree = "<group>"; };
-		177E16E11D4970E700A00B87 /* Notice.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Notice.markdown; path = ProRTC_v1.0/Notice.markdown; sourceTree = "<group>"; };
-		177E16E21D4970E700A00B87 /* Release-note.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Release-note.markdown"; path = "ProRTC_v1.0/Release-note.markdown"; sourceTree = "<group>"; };
-		177E16E71D4970F700A00B87 /* ProRTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProRTC.h; sourceTree = "<group>"; };
-		177E16E81D4970F700A00B87 /* PWDataFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWDataFile.h; sourceTree = "<group>"; };
-		177E16E91D4970F700A00B87 /* PWEAGLVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWEAGLVideoView.h; sourceTree = "<group>"; };
-		177E16EA1D4970F700A00B87 /* PWErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWErrorCode.h; sourceTree = "<group>"; };
-		177E16EB1D4970F700A00B87 /* PWMediaConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWMediaConfiguration.h; sourceTree = "<group>"; };
-		177E16EC1D4970F700A00B87 /* PWMediaSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWMediaSession.h; sourceTree = "<group>"; };
-		177E16ED1D4970F700A00B87 /* PWMediaStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWMediaStream.h; sourceTree = "<group>"; };
-		177E16EE1D4970F700A00B87 /* PWRemotePeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWRemotePeer.h; sourceTree = "<group>"; };
-		177E16EF1D4970F700A00B87 /* PWRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWRoom.h; sourceTree = "<group>"; };
-		177E16F01D4970F700A00B87 /* PWStatsBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWStatsBuilder.h; sourceTree = "<group>"; };
-		177E16F11D4970F700A00B87 /* PWVideoTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWVideoTrack.h; sourceTree = "<group>"; };
-		177E16F21D4970F700A00B87 /* libProRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProRTC.a; path = ProRTC_v1.0/ProRTC/libProRTC.a; sourceTree = "<group>"; };
-		177E16F31D4970F700A00B87 /* libProRTCCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProRTCCore.a; path = ProRTC_v1.0/ProRTC/libProRTCCore.a; sourceTree = "<group>"; };
 		177F0C341D1B838A00BAD5AA /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
 		177F0C351D1B838A00BAD5AA /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
 		177F0C391D1B88E800BAD5AA /* GrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowingTextView.h; sourceTree = "<group>"; };
@@ -72,6 +55,10 @@
 		177F0C401D1B89E700BAD5AA /* ChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
 		177F0C421D1B8A4900BAD5AA /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		177F0C431D1B8A4900BAD5AA /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		179BBA1A1D4A8EF7003D701E /* HowToUse.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = HowToUse.markdown; path = ProRTC_v1.0/HowToUse.markdown; sourceTree = "<group>"; };
+		179BBA1B1D4A8EF7003D701E /* Notice.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Notice.markdown; path = ProRTC_v1.0/Notice.markdown; sourceTree = "<group>"; };
+		179BBA1C1D4A8EF7003D701E /* Release-note.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Release-note.markdown"; path = "ProRTC_v1.0/Release-note.markdown"; sourceTree = "<group>"; };
+		179BBA201D4A8F0E003D701E /* ProRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProRTC.framework; path = ProRTC_v1.0/ProRTC.framework; sourceTree = "<group>"; };
 		17F7BA491D1B43A300C1AECD /* ProRTCSmapleIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProRTCSmapleIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F7BA4D1D1B43A300C1AECD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		17F7BA4F1D1B43A300C1AECD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,13 +105,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179BBA211D4A8F0E003D701E /* ProRTC.framework in Frameworks */,
 				17F7BA951D1B4AAF00C1AECD /* libc++.1.dylib in Frameworks */,
 				17F7BA961D1B4AAF00C1AECD /* libicucore.A.dylib in Frameworks */,
 				17F7BA971D1B4AAF00C1AECD /* libsqlite3.dylib in Frameworks */,
 				17F7BA981D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib in Frameworks */,
 				17F7BA991D1B4AAF00C1AECD /* libSystem.B.dylib in Frameworks */,
 				17F7BA8F1D1B4A6C00C1AECD /* QuartzCore.framework in Frameworks */,
-				177E16F51D4970F700A00B87 /* libProRTCCore.a in Frameworks */,
 				17F7BA8D1D1B4A6500C1AECD /* OpenGLES.framework in Frameworks */,
 				17F7BA8A1D1B4A5E00C1AECD /* CoreAudio.framework in Frameworks */,
 				17F7BA8B1D1B4A5E00C1AECD /* CoreVideo.framework in Frameworks */,
@@ -136,7 +123,6 @@
 				17F7BA7D1D1B4A1800C1AECD /* AVFoundation.framework in Frameworks */,
 				17F7BA7B1D1B4A0F00C1AECD /* CoreGraphics.framework in Frameworks */,
 				17F7BA791D1B4A0600C1AECD /* CoreMedia.framework in Frameworks */,
-				177E16F41D4970F700A00B87 /* libProRTC.a in Frameworks */,
 				17F7BA771D1B49F200C1AECD /* GLKit.framework in Frameworks */,
 				17F7BA741D1B49CF00C1AECD /* UIKit.framework in Frameworks */,
 				3F2391834C6AAA87C3A28483 /* libPods-ProRTCSmapleIOS.a in Frameworks */,
@@ -146,25 +132,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		177E16E61D4970F700A00B87 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				177E16E71D4970F700A00B87 /* ProRTC.h */,
-				177E16E81D4970F700A00B87 /* PWDataFile.h */,
-				177E16E91D4970F700A00B87 /* PWEAGLVideoView.h */,
-				177E16EA1D4970F700A00B87 /* PWErrorCode.h */,
-				177E16EB1D4970F700A00B87 /* PWMediaConfiguration.h */,
-				177E16EC1D4970F700A00B87 /* PWMediaSession.h */,
-				177E16ED1D4970F700A00B87 /* PWMediaStream.h */,
-				177E16EE1D4970F700A00B87 /* PWRemotePeer.h */,
-				177E16EF1D4970F700A00B87 /* PWRoom.h */,
-				177E16F01D4970F700A00B87 /* PWStatsBuilder.h */,
-				177E16F11D4970F700A00B87 /* PWVideoTrack.h */,
-			);
-			name = Headers;
-			path = ProRTC_v1.0/ProRTC/Headers;
-			sourceTree = "<group>";
-		};
 		177F0C321D1B838A00BAD5AA /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,23 +169,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1799A8131D495551008ABCFB /* ProRTC */ = {
-			isa = PBXGroup;
-			children = (
-				177E16E61D4970F700A00B87 /* Headers */,
-				177E16F21D4970F700A00B87 /* libProRTC.a */,
-				177E16F31D4970F700A00B87 /* libProRTCCore.a */,
-			);
-			name = ProRTC;
-			sourceTree = "<group>";
-		};
 		17F7BA401D1B43A300C1AECD = {
 			isa = PBXGroup;
 			children = (
-				177E16E01D4970E700A00B87 /* HowToUse.markdown */,
-				177E16E11D4970E700A00B87 /* Notice.markdown */,
-				177E16E21D4970E700A00B87 /* Release-note.markdown */,
-				1799A8131D495551008ABCFB /* ProRTC */,
+				179BBA1A1D4A8EF7003D701E /* HowToUse.markdown */,
+				179BBA1B1D4A8EF7003D701E /* Notice.markdown */,
+				179BBA1C1D4A8EF7003D701E /* Release-note.markdown */,
 				17F7BA4B1D1B43A300C1AECD /* ProRTCSmapleIOS */,
 				17F7BA4A1D1B43A300C1AECD /* Products */,
 				17F7BA751D1B49DC00C1AECD /* Frameworks */,
@@ -277,6 +233,7 @@
 		17F7BA751D1B49DC00C1AECD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				179BBA201D4A8F0E003D701E /* ProRTC.framework */,
 				17F7BA901D1B4AAF00C1AECD /* libc++.1.dylib */,
 				17F7BA911D1B4AAF00C1AECD /* libicucore.A.dylib */,
 				17F7BA921D1B4AAF00C1AECD /* libsqlite3.dylib */,
@@ -594,14 +551,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProRTC_v1.0",
+				);
 				GCC_PREFIX_HEADER = "ProRTCSmapleIOS/ProRTCSampleIOS-prefix.pch";
 				INFOPLIST_FILE = ProRTCSmapleIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ProRTC_v1.0/ProRTC",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codiant.ProRTCSmapleIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -613,14 +570,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ProRTC_v1.0",
+				);
 				GCC_PREFIX_HEADER = "ProRTCSmapleIOS/ProRTCSampleIOS-prefix.pch";
 				INFOPLIST_FILE = ProRTCSmapleIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ProRTC_v1.0/ProRTC",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codiant.ProRTCSmapleIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

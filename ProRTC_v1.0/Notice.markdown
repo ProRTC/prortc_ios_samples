@@ -1,4 +1,4 @@
-The ProRTC library utilizes the following copyrighted projects, the use of which is hereby acknowledged.
+The ProRTC framework utilizes the following copyrighted projects, the use of which is hereby acknowledged.
 
 WebRTC
 ======

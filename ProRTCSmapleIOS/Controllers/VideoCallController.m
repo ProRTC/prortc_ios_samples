@@ -15,7 +15,7 @@
 #import "Message.h"
 
 // ProRTC
-#import "ProRTC.h"
+#import <ProRTC/ProRTC.h>
 
 @interface VideoCallController () <PWMediaSessionDelegate>
 {

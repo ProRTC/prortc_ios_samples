@@ -1,7 +1,7 @@
-ProRTC library
-=================
+ProRTC Framework
+================
 
-The ProRTC library lets you integrate Google native WebRTC in iOS apps.
+The ProRTC Framework lets you integrate Google native WebRTC in iOS apps.
 
 * [ProRTC iOS SDK](http://prortc.com/)
 
@@ -9,15 +9,11 @@ The ProRTC library lets you integrate Google native WebRTC in iOS apps.
 Using the SDK
 -------------
 
-The ProRTC library requires Xcode 7+.
+The ProRTC requires Xcode 7+.
 
-Drag and drop ProRTC library folder into your project. Included files and folder:
+Drag and drop ProRTC.framework into your project.
 
-* Headers
-* libProRTC.a
-* libProRTCCore.a
-
-The ProRTC library requires the following frameworks and libraries:
+The ProRTC requires the following frameworks and libraries:
 
 * UIKit.framework
 * GLKit.framework
@@ -43,8 +39,6 @@ The ProRTC library requires the following frameworks and libraries:
 
 Other linker flag
 -----------------
-
-ProRTC library includes few Objective-C categories of WebRTC classes so we need to make sure that linker loads all categories and classes of static library properly:
 
 Goto your project [Build settings] and add [-ObjC] flag in Other linker flag section.
 

@@ -12,7 +12,7 @@
 #import "Message.h"
 
 // ProRTC
-#import "PWRemotePeer.h"
+#import <ProRTC/PWRemotePeer.h>
 
 @interface ChatController ()
 
