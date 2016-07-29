@@ -7,6 +7,13 @@
 <br>
 # ProRTC iOS Sample - A WebRTC Solution for iOS
 
+[![Version](https://img.shields.io/cocoapods/v/ProRTC_iOS.svg?style=flat)](https://github.com/ProRTC/ProRTC_iOS)
+[![Platform](https://img.shields.io/cocoapods/p/ProRTC_iOS.svg?style=flat)]()
+[![Twitter](https://img.shields.io/badge/twitter-@ProRTC-55acee.svg?style=flat)](http://twitter.com/ProRTCApp)
+[![Facebook](https://img.shields.io/badge/facebook-@ProRTC-3b5998.svg?style=flat)](https://www.facebook.com/Prortcapp-999509483500735/)
+[![Google](https://img.shields.io/badge/google+-@ProRTC-dd4b39.svg?style=flat)](https://plus.google.com/+CodiantInc)
+[![LinkedIn](https://img.shields.io/badge/linkedin-@ProRTC-0077b5.svg?style=flat)](https://www.linkedin.com/company/neuron-solutions-inc-)
+
 ProRTC framework provides the infrastructure needed to integrate Google native WebRTC in iOS apps. 
 It is a layer handcrafted over WebRTC native trunk code to obtain audio/video conferencing, text-chat, file sharing and other cool stuff.
 
@@ -16,21 +23,46 @@ ProRTC iOS sample helps you to better understand the features of ProRTC and demo
  - Text messaging.
  - Data channels support.
 
-[Download SDK](http://prortc.com/).
-<br>
-[ProRTC Framework Reference](http://prortc.com/document/).
-<br>
-For more visit [ProRTC](http://prortc.com/).
-
 # If you have any feedback, doubts or feature request, feel free to email us at support@prortc.com
 
-# Project Setup
+# How To Get Started
+
+- [Download ProRTC](http://prortc.com/) and try out the included sample project.
+- Check out the [documentation](http://prortc.com/document/) for the APIs available in ProRTC framework.
+
+# Installation
 
 The ProRTC requires **Xcode 7+**.
 
-Drag & drop `ProRTC.framework` into your project.
+## CocoaPods
 
-You can easily find these files in this sample project.
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which simplifies the process of integrating 3rd-party libraries in your projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+#### Podfile
+
+To integrate ProRTC into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+platform :ios, '9.0'
+
+target 'TargetName' do
+pod 'ProRTC_iOS', '~> 1.0.0'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+## Manually
+
+Drag & drop `ProRTC.framework` into your project. If you don't have `ProRTC.framework`, you can download from [here](http://prortc.com/) Or you can easily find in this sample project.
 
 The ProRTC framework requires the following frameworks and libraries:
 * UIKit.framework
@@ -58,7 +90,7 @@ The ProRTC framework requires the following frameworks and libraries:
 
 Goto your project **Build settings** and add **-ObjC** flag in **Other linker flag** section.
 
-### All done! 😎
+### All done!
 
 # Requirements
 
