@@ -460,14 +460,19 @@ If you want to contribute in WebRTC era, share your ideas, changes and modificat
 None at this time.
 
 ## 👑 Author
-[Codiant Software Technology Pvt Ltd](http://www.codiant.com).
-<br>
-[ProRTC project authors](http://prortc.com/).
+[Codiant Software Technology Pvt Ltd](http://www.codiant.com) develops and operates ProRTC.
+<br><br>
+ProRTC project authors, support@prortc.com
 
 ## 📄 Change Log
 ### See [Changelog.md](https://github.com/ProRTC/prortc_ios_samples/blob/master/CHANGELOG.md)
 
 ## License
 You're free to copy and modify the source code of ProRTC sample project for your own projects. See LICENSE for details.
+<br><br>
+ProRTC services are available under the Commercial license. See the [Terms](http://prortc.com/terms-conditions.php) for more info.
+<br><br>
+The ProRTC framework utilizes the following copyrighted projects, the use of which is hereby acknowledged.
+* [WebRTC](https://chromium.googlesource.com/external/webrtc/+/master/webrtc/LICENSE)
 
 # If you have any feedback, doubts or feature request, feel free to email us at support@prortc.com
