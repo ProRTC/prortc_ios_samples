@@ -50,7 +50,7 @@ To integrate ProRTC into your Xcode project using CocoaPods, specify it in your 
 platform :ios, '9.0'
 
 target 'TargetName' do
-pod 'ProRTC_iOS', '~> 1.0.0'
+pod 'ProRTC_iOS'
 end
 ```
 
