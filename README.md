@@ -172,7 +172,7 @@ Create a property of `PWMediaSession`, using this session you'll be doing all We
 @property (strong, nonatomic) PWMediaSession *mediaSession;
 ```
 
-### User Media
+####• Get User Media
 
 `PWLocalCameraPreview` class is used for displaying local camera video.
 
@@ -199,7 +199,7 @@ For handling received video data - create properties of `PWVideoTrack`:
 @property (strong, nonatomic) PWVideoTrack *localVideoTrack;
 @property (strong, nonatomic) PWVideoTrack *remoteVideoTrack;
 ```
-### Go Live
+####• Video Call
 
 ```objective-c
 // Initialize session.
@@ -216,11 +216,11 @@ NSString *meetingId = @"prortc";
 [self.mediaSession startVideoCall:meetingId displayName:name delegate:self];
 
 ```
-<br>
-<b>Video call with custom media configuration:</b>
+####• Video call with custom media configuration:
+
 You can change these properties according to your requirement. If you do not - By default best configuration will be used.
 
-For more details: see `PWMediaConfiguration.h`
+For more details: see [`PWMediaConfiguration.h`](http://prortc.com/document/Classes/PWMediaConfiguration.html)
 
 ```objective-c
 //
@@ -245,7 +245,7 @@ config.maxVideoBitrate = 1.8e6; // extends video bitrate from 1.5 Mbps to 1.8 Mb
 
 ```
 <br>
-<b>For Audio only call:</b>
+<b>• Audio only call:</b>
 ```objective-c
 NSString *name = [UIDevice currentDevice].name;
 NSString *meetingId = @"prortc";
@@ -254,7 +254,7 @@ NSString *meetingId = @"prortc";
 ```
 ### Delegates
 
-<b>Connection state:</b>
+####• Connection state:
 ```objective-c
 - (void)mediaSession:(PWMediaSession *)session didChangeState:(PWConnectionState)state
 {
@@ -279,7 +279,7 @@ NSString *meetingId = @"prortc";
 }
 ```
 
-<b>A/V:</b>
+####• Audio/Video:
 ```objective-c
 - (void)mediaSession:(PWMediaSession *)session didAddLocalStream:(PWMediaStream *)localStream
 {
@@ -308,7 +308,7 @@ NSString *meetingId = @"prortc";
 }
 ```
 
-<b>Failure:</b>
+####• Failure:
 ```objective-c
 - (void)mediaSession:(PWMediaSession *)session didFailWithError:(NSError *)error
 {
@@ -319,12 +319,12 @@ NSString *meetingId = @"prortc";
 
 ### Text-chat
 
-<b>Sending Text message to all participants in the room</b>
+#### Sending Text message to all participants in the room
 ```objective-c
 [self.mediaSession sendMessage:message];
 ```
 
-<b>Sending Text message to single participant in the room: Private</b>
+#### Sending Text message to single participant in the room: Private
 ```objective-c
 [self.mediaSession sendMessage:message toPeer:<recipient_id>];
 ```
@@ -340,9 +340,9 @@ Called when `session` receives new Text message in room (Common for both public/
 ```
 <br>
 
-### Extras 😎
+### Extras
 
-<b>• To check Audio/Video access permission</b>
+####• To check Audio/Video access permission
 
 ```objective-c
 if (self.mediaSession.videoAuthorized) {
@@ -354,7 +354,7 @@ if (self.mediaSession.audioAuthorized) {
 }
 ```
 
-<b>• Stop device to go into sleep mode during call</b>
+####• Stop device to go into sleep mode during call
 
 ```objective-c
 // default is `NO`
@@ -364,7 +364,7 @@ Don't forget to reset it in your `End call` action or in `AppDelegate` method `a
  * `[[UIApplication sharedApplication] setIdleTimerDisabled:NO];` OR
  * `[self.mediaSession setIdleTimerDisabled:NO];`
  
-<b>• Switching Camera</b>
+####• Switching Camera
 
 ```objective-c
 if (self.mediaSession.cameraPosition == PWCameraPositionFront) {
@@ -375,7 +375,7 @@ else {
 }
 ```
 
-<b>• Mute/UnMute Audio/Video</b>
+####• Mute/UnMute Audio/Video
 
 ```objective-c
 [self.mediaSession stopMic];
@@ -385,16 +385,15 @@ else {
 [self.mediaSession startCamera];
 ```
 
-<br>
-<b>For More Details: See `PWMediaSession.h`</b>
+For More Details: See [`PWMediaSession.h`](http://prortc.com/document/Classes/PWMediaSession.html)
 
 ## Contributing
 If you want to contribute in WebRTC era, share your ideas, changes and modifications to provide more benefits to developers.
 
-## 🔧 Known Issues
+## Known Issues
 None at this time.
 
-## 👑 Author
+## Author
 [Codiant Software Technology Pvt Ltd](http://www.codiant.com) develops and operates ProRTC.
 <br><br>
 ProRTC project authors, support@prortc.com
