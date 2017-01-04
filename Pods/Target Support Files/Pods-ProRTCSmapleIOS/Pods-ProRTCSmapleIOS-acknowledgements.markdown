@@ -1,6 +1,10 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## ProRTC_iOS
+
+https://prortc.com/terms-conditions.php
+
 ## SlackTextViewController
 
 Copyright (c) Slack Technologies, Inc.

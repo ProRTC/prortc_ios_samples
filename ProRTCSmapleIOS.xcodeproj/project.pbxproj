@@ -12,31 +12,12 @@
 		177F0C3E1D1B893500BAD5AA /* MessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C3D1D1B893500BAD5AA /* MessageViewCell.m */; };
 		177F0C411D1B89E700BAD5AA /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C401D1B89E700BAD5AA /* ChatController.m */; };
 		177F0C441D1B8A4900BAD5AA /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 177F0C431D1B8A4900BAD5AA /* Message.m */; };
-		179BBA211D4A8F0E003D701E /* ProRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179BBA201D4A8F0E003D701E /* ProRTC.framework */; };
 		17F7BA4E1D1B43A300C1AECD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BA4D1D1B43A300C1AECD /* main.m */; };
 		17F7BA511D1B43A300C1AECD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BA501D1B43A300C1AECD /* AppDelegate.m */; };
 		17F7BA571D1B43A300C1AECD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F7BA551D1B43A300C1AECD /* Main.storyboard */; };
 		17F7BA591D1B43A300C1AECD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F7BA581D1B43A300C1AECD /* Assets.xcassets */; };
 		17F7BA5C1D1B43A300C1AECD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F7BA5A1D1B43A300C1AECD /* LaunchScreen.storyboard */; };
 		17F7BA741D1B49CF00C1AECD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA731D1B49CF00C1AECD /* UIKit.framework */; };
-		17F7BA771D1B49F200C1AECD /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA761D1B49F200C1AECD /* GLKit.framework */; };
-		17F7BA791D1B4A0600C1AECD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA781D1B4A0600C1AECD /* CoreMedia.framework */; };
-		17F7BA7B1D1B4A0F00C1AECD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA7A1D1B4A0F00C1AECD /* CoreGraphics.framework */; };
-		17F7BA7D1D1B4A1800C1AECD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA7C1D1B4A1800C1AECD /* AVFoundation.framework */; };
-		17F7BA7F1D1B4A1F00C1AECD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA7E1D1B4A1F00C1AECD /* Foundation.framework */; };
-		17F7BA811D1B4A2500C1AECD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA801D1B4A2500C1AECD /* Security.framework */; };
-		17F7BA831D1B4A3D00C1AECD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA821D1B4A3D00C1AECD /* CFNetwork.framework */; };
-		17F7BA861D1B4A4B00C1AECD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA841D1B4A4B00C1AECD /* AudioToolbox.framework */; };
-		17F7BA871D1B4A4B00C1AECD /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA851D1B4A4B00C1AECD /* VideoToolbox.framework */; };
-		17F7BA8A1D1B4A5E00C1AECD /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA881D1B4A5E00C1AECD /* CoreAudio.framework */; };
-		17F7BA8B1D1B4A5E00C1AECD /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA891D1B4A5E00C1AECD /* CoreVideo.framework */; };
-		17F7BA8D1D1B4A6500C1AECD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA8C1D1B4A6500C1AECD /* OpenGLES.framework */; };
-		17F7BA8F1D1B4A6C00C1AECD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA8E1D1B4A6C00C1AECD /* QuartzCore.framework */; };
-		17F7BA951D1B4AAF00C1AECD /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA901D1B4AAF00C1AECD /* libc++.1.dylib */; };
-		17F7BA961D1B4AAF00C1AECD /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA911D1B4AAF00C1AECD /* libicucore.A.dylib */; };
-		17F7BA971D1B4AAF00C1AECD /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA921D1B4AAF00C1AECD /* libsqlite3.dylib */; };
-		17F7BA981D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA931D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib */; };
-		17F7BA991D1B4AAF00C1AECD /* libSystem.B.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17F7BA941D1B4AAF00C1AECD /* libSystem.B.dylib */; };
 		17F7BA9C1D1B4C3700C1AECD /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BA9B1D1B4C3700C1AECD /* HomeController.m */; };
 		17F7BAA31D1B512D00C1AECD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BAA11D1B512D00C1AECD /* Reachability.m */; };
 		17F7BAA61D1B524E00C1AECD /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F7BAA51D1B524E00C1AECD /* Utils.m */; };
@@ -55,10 +36,6 @@
 		177F0C401D1B89E700BAD5AA /* ChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
 		177F0C421D1B8A4900BAD5AA /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		177F0C431D1B8A4900BAD5AA /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
-		179BBA1A1D4A8EF7003D701E /* HowToUse.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = HowToUse.markdown; path = ProRTC_v1.0/HowToUse.markdown; sourceTree = "<group>"; };
-		179BBA1B1D4A8EF7003D701E /* Notice.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Notice.markdown; path = ProRTC_v1.0/Notice.markdown; sourceTree = "<group>"; };
-		179BBA1C1D4A8EF7003D701E /* Release-note.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Release-note.markdown"; path = "ProRTC_v1.0/Release-note.markdown"; sourceTree = "<group>"; };
-		179BBA201D4A8F0E003D701E /* ProRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProRTC.framework; path = ProRTC_v1.0/ProRTC.framework; sourceTree = "<group>"; };
 		17F7BA491D1B43A300C1AECD /* ProRTCSmapleIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProRTCSmapleIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F7BA4D1D1B43A300C1AECD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		17F7BA4F1D1B43A300C1AECD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,25 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				179BBA211D4A8F0E003D701E /* ProRTC.framework in Frameworks */,
-				17F7BA951D1B4AAF00C1AECD /* libc++.1.dylib in Frameworks */,
-				17F7BA961D1B4AAF00C1AECD /* libicucore.A.dylib in Frameworks */,
-				17F7BA971D1B4AAF00C1AECD /* libsqlite3.dylib in Frameworks */,
-				17F7BA981D1B4AAF00C1AECD /* libstdc++.6.0.9.dylib in Frameworks */,
-				17F7BA991D1B4AAF00C1AECD /* libSystem.B.dylib in Frameworks */,
-				17F7BA8F1D1B4A6C00C1AECD /* QuartzCore.framework in Frameworks */,
-				17F7BA8D1D1B4A6500C1AECD /* OpenGLES.framework in Frameworks */,
-				17F7BA8A1D1B4A5E00C1AECD /* CoreAudio.framework in Frameworks */,
-				17F7BA8B1D1B4A5E00C1AECD /* CoreVideo.framework in Frameworks */,
-				17F7BA861D1B4A4B00C1AECD /* AudioToolbox.framework in Frameworks */,
-				17F7BA871D1B4A4B00C1AECD /* VideoToolbox.framework in Frameworks */,
-				17F7BA831D1B4A3D00C1AECD /* CFNetwork.framework in Frameworks */,
-				17F7BA811D1B4A2500C1AECD /* Security.framework in Frameworks */,
-				17F7BA7F1D1B4A1F00C1AECD /* Foundation.framework in Frameworks */,
-				17F7BA7D1D1B4A1800C1AECD /* AVFoundation.framework in Frameworks */,
-				17F7BA7B1D1B4A0F00C1AECD /* CoreGraphics.framework in Frameworks */,
-				17F7BA791D1B4A0600C1AECD /* CoreMedia.framework in Frameworks */,
-				17F7BA771D1B49F200C1AECD /* GLKit.framework in Frameworks */,
 				17F7BA741D1B49CF00C1AECD /* UIKit.framework in Frameworks */,
 				3F2391834C6AAA87C3A28483 /* libPods-ProRTCSmapleIOS.a in Frameworks */,
 			);
@@ -172,9 +130,6 @@
 		17F7BA401D1B43A300C1AECD = {
 			isa = PBXGroup;
 			children = (
-				179BBA1A1D4A8EF7003D701E /* HowToUse.markdown */,
-				179BBA1B1D4A8EF7003D701E /* Notice.markdown */,
-				179BBA1C1D4A8EF7003D701E /* Release-note.markdown */,
 				17F7BA4B1D1B43A300C1AECD /* ProRTCSmapleIOS */,
 				17F7BA4A1D1B43A300C1AECD /* Products */,
 				17F7BA751D1B49DC00C1AECD /* Frameworks */,
@@ -233,7 +188,6 @@
 		17F7BA751D1B49DC00C1AECD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				179BBA201D4A8F0E003D701E /* ProRTC.framework */,
 				17F7BA901D1B4AAF00C1AECD /* libc++.1.dylib */,
 				17F7BA911D1B4AAF00C1AECD /* libicucore.A.dylib */,
 				17F7BA921D1B4AAF00C1AECD /* libsqlite3.dylib */,
@@ -302,12 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17F7BA601D1B43A300C1AECD /* Build configuration list for PBXNativeTarget "ProRTCSmapleIOS" */;
 			buildPhases = (
-				4B5855216D9B546BB3715CDC /* 📦 Check Pods Manifest.lock */,
+				4B5855216D9B546BB3715CDC /* [CP] Check Pods Manifest.lock */,
 				17F7BA451D1B43A300C1AECD /* Sources */,
 				17F7BA461D1B43A300C1AECD /* Frameworks */,
 				17F7BA471D1B43A300C1AECD /* Resources */,
-				ABC684F0548641D2487A5827 /* 📦 Embed Pods Frameworks */,
-				8304F809B6D764FE9BD64D10 /* 📦 Copy Pods Resources */,
+				ABC684F0548641D2487A5827 /* [CP] Embed Pods Frameworks */,
+				8304F809B6D764FE9BD64D10 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,11 +278,13 @@
 		17F7BA411D1B43A300C1AECD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Codiant Software Technologies Pvt Ltd";
 				TargetAttributes = {
 					17F7BA481D1B43A300C1AECD = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Q84UD28472;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -369,29 +325,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4B5855216D9B546BB3715CDC /* 📦 Check Pods Manifest.lock */ = {
+		4B5855216D9B546BB3715CDC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8304F809B6D764FE9BD64D10 /* 📦 Copy Pods Resources */ = {
+		8304F809B6D764FE9BD64D10 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,14 +355,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProRTCSmapleIOS/Pods-ProRTCSmapleIOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABC684F0548641D2487A5827 /* 📦 Embed Pods Frameworks */ = {
+		ABC684F0548641D2487A5827 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,8 +427,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -518,8 +476,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -551,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q84UD28472;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProRTC_v1.0",
@@ -561,6 +522,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codiant.ProRTCSmapleIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5650c928-2fa9-4573-a40c-fb88cf1997e0";
+				PROVISIONING_PROFILE_SPECIFIER = ProRTCSampleGithubDev;
 			};
 			name = Debug;
 		};
@@ -570,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q84UD28472;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ProRTC_v1.0",
@@ -580,6 +544,8 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codiant.ProRTCSmapleIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5650c928-2fa9-4573-a40c-fb88cf1997e0";
+				PROVISIONING_PROFILE_SPECIFIER = ProRTCSampleGithubDev;
 			};
 			name = Release;
 		};

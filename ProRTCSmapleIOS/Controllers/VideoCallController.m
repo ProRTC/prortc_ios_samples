@@ -30,8 +30,8 @@
 // remoteVideoView: An object of PWEAGLVideoView to show remote video.
 @property (weak, nonatomic) IBOutlet PWEAGLVideoView *remoteVideoView;
 
-// localVideoView: An object of PWEAGLVideoView to show local camera video.
-@property (weak, nonatomic) IBOutlet PWEAGLVideoView *localVideoView;
+// localVideoView: An object of PWLocalCameraPreview to show local camera video.
+@property (weak, nonatomic) IBOutlet PWLocalCameraPreview *localVideoView;
 
 // cameraDisableView: Placeholder view to show when user stops publishing video.
 @property (weak, nonatomic) IBOutlet UIView *cameraDisableView;
@@ -103,56 +103,17 @@
     
     
     // Initialize session.
-    self.mediaSession = [PWMediaSession sharedInstance];
-    
-    
-    
-    // ProRTC also includes support for datachannels.
-    // With the help of datachannels you can transfer files or even you can also send text messages.
-    //
-    // because this sample also includes 1x1 video call with text messaging, it's using datachannels for text messaging here.
-    //
-    // if datachannels are not enabled, file sharing will not work but text messaging will.
-    // by default session checks, If datachannels are enabled private messages will be sent through channels not server.
-    // if disabled, messages will be sent through server.
-    //
-    // group chat does not support datachannels for now.
-    //
-    // @warning: This line of code must be written before initiating call.
-    //
-    // do not forget to disbale it, If not using, It'll save processing time.
-    //
-    PWMediaSessionEnableDataChannels(YES);
-    
+    self.mediaSession = [PWMediaSession sharedSession];
     
     
     // Start video call.
-    // @param: room name or any unique identifier.
-    // @param: participant id --
+    // @param: room Id or meeting Id.
     // @param: participant name --
     // @param: delegate <PWMediaSessionDelegate>
     //
-    // It's just a sample and we're not maintaining user data so passing [NSUUID UUID] in participant id and name.
-    // You can pass your own values If you want.
-    //
     
-    NSString *GUID = [NSUUID UUID].UUIDString;
     NSString *name = [UIDevice currentDevice].name;
-    
-    [self.mediaSession startVideoCall:self.roomName participant:GUID displayName:name delegate:self];
-    
-    
-    // For custom media properties.
-    // You can use this method:
-    //  **  [self.mediaSession startVideoCall:<#(NSString *)#> participant:<#(NSString *)#> displayName:<#(NSString *)#> delegate:<#(id<PWMediaSessionDelegate>)#> configuration:<#(PWMediaConfiguration *)#>];**
-    //
-    
-    
-    // For only audio calling.
-    // You can use this method:
-    //  **  [self.mediaSession startAudioCall:<#(NSString *)#> participant:<#(NSString *)#> displayName:<#(NSString *)#> delegate:<#(id<PWMediaSessionDelegate>)#>];**
-    //
-    
+    [self.mediaSession startVideoCall:self.roomName displayName:name delegate:self];
     
     // add notification observers to perform chat operations. (Send by ChatController.)
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newMessageSent:) name:@"newMessageSent" object:nil];
@@ -345,7 +306,7 @@
         self.localVideoTrack = localStream.videoTracks[0];
         
         // start rendering of local camera video.
-        [self.localVideoTrack bindRendererView:self.localVideoView];
+        [self.localVideoView bindWithLocalVideoTrack:self.localVideoTrack];
     }
     
     // Stop device to going into sleep mode during video conferencing.
@@ -361,7 +322,7 @@
         self.remoteVideoTrack = remoteStream.videoTracks[0];
         
         // start rendering of remote camera video.
-        [self.remoteVideoTrack bindRendererView:self.remoteVideoView];
+        [self.remoteVideoView bindTrack:self.remoteVideoTrack];
         
         // save remote user id, will be useful for further operation e.g. sending messages.
         self.remoteUserId = remotePeer.peerId;
@@ -472,8 +433,7 @@
 - (IBAction)btnHangup_Action:(id)sender {
     
     // stop rendering.
-    if (self.remoteVideoTrack) [self.remoteVideoTrack unBindRendererView:self.remoteVideoView];
-    if (self.localVideoTrack) [self.localVideoTrack unBindRendererView:self.localVideoView];
+    if (self.remoteVideoTrack) [self.remoteVideoView unBindTrack:self.remoteVideoTrack];
     
     // remove stored videos data.
     self.localVideoTrack = nil;
