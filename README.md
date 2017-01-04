@@ -19,9 +19,8 @@ It is a layer handcrafted over WebRTC native trunk code to obtain audio/video co
 
 ProRTC iOS sample helps you to better understand the features of ProRTC and demonstrates basic integration steps for providing support for the following features in your iPhone/iPad apps:
 
- - 4-way voice and video call.
+ - 1x1 video call.
  - Text-chat.
- - Datachannels support.
 
 # If you have any feedback, doubts or feature request, feel free to email us at support@prortc.com
 
