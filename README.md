@@ -165,7 +165,7 @@ Import ProRTC.framework header file:
 @end
 ```
 
-* `PWMediaSessionDelegate` - Handles events such as participant joining/leaving, connect/disconnect states and local/remote media.
+`PWMediaSessionDelegate` - Handles events such as participant joining/leaving, connect/disconnect states and local/remote media.
 
 Create a property of `PWMediaSession`, using this session you'll be doing all WebRTC operations.
 ```objective-c
@@ -398,7 +398,7 @@ None at this time.
 <br><br>
 ProRTC project authors, support@prortc.com
 
-## 📄 Change Log
+## Changelog
 ### See [Changelog.md](https://github.com/ProRTC/prortc_ios_samples/blob/master/CHANGELOG.md)
 
 ## License
