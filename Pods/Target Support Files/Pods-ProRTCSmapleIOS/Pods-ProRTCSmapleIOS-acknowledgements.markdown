@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## ProRTC_iOS
+## ProRTC
 
 https://prortc.com/terms-conditions.php
 

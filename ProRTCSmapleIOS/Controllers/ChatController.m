@@ -11,9 +11,6 @@
 #import "MessageViewCell.h"
 #import "Message.h"
 
-// ProRTC
-#import <ProRTC/PWRemotePeer.h>
-
 @interface ChatController ()
 
 @property (nonatomic, strong) UIWindow *pipWindow;
@@ -81,7 +78,7 @@
     [self.tableView registerClass:[MessageViewCell class] forCellReuseIdentifier:MessengerCellIdentifier];
     
     [self.autoCompletionView registerClass:[MessageViewCell class] forCellReuseIdentifier:AutoCompletionCellIdentifier];
-    [self registerPrefixesForAutoCompletion:@[@"&&&"]];
+    [self registerPrefixesForAutoCompletion:@[@"&&&&&&&"]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newMessageReceived:) name:@"newMessageReceived" object:nil];
 }
@@ -162,7 +159,6 @@
     message.username = @"me";
     message.text = [self.textView.text copy];
     message.isOutgoing = YES;
-    message.selectedUser = self.opponentIdStr.length > 0 ? self.opponentIdStr : @"";
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
@@ -178,12 +174,7 @@
     
     [super didPressRightButton:sender];
     
-    if (message.selectedUser.length > 0) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"newPrivateMessageSent" object:message];
-    }
-    else {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"newMessageSent" object:message];
-    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"newMessageSent" object:message];
 }
 
 - (NSString *)keyForTextCaching {
@@ -257,12 +248,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([tableView isEqual:self.tableView]) {
-        return [self messageCellForRowAtIndexPath:indexPath];
-    }
-    else {
-        return [self autoCompletionCellForRowAtIndexPath:indexPath];
-    }
+    return [self messageCellForRowAtIndexPath:indexPath];
 }
 
 - (UITableViewCell *)messageCellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -291,49 +277,11 @@
     return cell;
 }
 
-- (MessageViewCell *)autoCompletionCellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MessageViewCell *cell = (MessageViewCell *)[self.autoCompletionView dequeueReusableCellWithIdentifier:AutoCompletionCellIdentifier];
-    cell.indexPath = indexPath;
-    
-    PWRemotePeer *user = self.searchResult[indexPath.row];
-    NSString *text = user.displayName;
-    
-    if ([self.foundPrefix isEqualToString:@"#"]) {
-        text = [NSString stringWithFormat:@"# %@", text];
-    }
-    else if (([self.foundPrefix isEqualToString:@":"] || [self.foundPrefix isEqualToString:@"+:"])) {
-        text = [NSString stringWithFormat:@":%@:", text];
-    }
-    
-    cell.titleLabel.text = text;
-    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-    cell.thumbnailView.image = [UIImage imageNamed:@"anonymousUser"];
-    
-    return cell;
-}
-
 #pragma mark - UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([tableView isEqual:self.autoCompletionView]) {
-        
-        PWRemotePeer *user = self.searchResult[indexPath.row];
-        NSMutableString *item = [user.displayName mutableCopy];
-        
-        if ([self.foundPrefix isEqualToString:@"@"] && self.foundPrefixRange.location == 0) {
-            [item appendString:@":"];
-        }
-        else if (([self.foundPrefix isEqualToString:@":"] || [self.foundPrefix isEqualToString:@"+:"])) {
-            [item appendString:@":"];
-        }
-        
-        [item appendString:@" "];
-        
-        [self acceptAutoCompletionWithString:item keepPrefix:YES];
-        self.selectedUserId = user.peerId;
-    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/ProRTC_iOS/ProRTC_iOS"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/ProRTC/ProRTC"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/ProRTC_iOS" "${PODS_ROOT}/Headers/Public/SlackTextViewController"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/ProRTC" "${PODS_ROOT}/Headers/Public/SlackTextViewController"
 LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/SlackTextViewController"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/ProRTC_iOS" -isystem "${PODS_ROOT}/Headers/Public/SlackTextViewController"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/ProRTC" -isystem "${PODS_ROOT}/Headers/Public/SlackTextViewController"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"SlackTextViewController" -l"System" -l"c++" -l"icucore" -l"sqlite3" -l"stdc++" -framework "AVFoundation" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreAudio" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreVideo" -framework "Foundation" -framework "GLKit" -framework "OpenGLES" -framework "ProRTC" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -framework "VideoToolbox"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

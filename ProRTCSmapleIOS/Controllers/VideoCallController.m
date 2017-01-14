@@ -36,44 +36,32 @@
 // cameraDisableView: Placeholder view to show when user stops publishing video.
 @property (weak, nonatomic) IBOutlet UIView *cameraDisableView;
 
-
 @property (weak, nonatomic) IBOutlet UIButton *btnAudio;
 @property (weak, nonatomic) IBOutlet UIButton *btnVideo;
 @property (weak, nonatomic) IBOutlet UIButton *btnHangup;
 @property (weak, nonatomic) IBOutlet UIButton *btnSwitchCamera;
 
-
 // create an object of ProRTC media session, using this object we'll be doing all WebRTC operations.
 @property (strong, nonatomic) PWMediaSession *mediaSession;
 
-
-// PWVideoTrack objects to hold local and remote videos data.
-@property (strong, nonatomic) PWVideoTrack *localVideoTrack;
+// Objects to hold local and remote audio/video data.
+@property (strong, nonatomic) PWLocalMedia *localMedia;
+@property (strong, nonatomic) PWLocalVideoTrack *localVideoTrack;
+@property (strong, nonatomic) PWLocalAudioTrack *localAudioTrack;
 @property (strong, nonatomic) PWVideoTrack *remoteVideoTrack;
-
-
-// you can also create PWMediaConfiguration object, If you want to set custom media properties.
-//
-// e.g. PWMediaConfiguration *config = [PSMediaConfiguration defaultConfiguration];
-//      config.maxAudioBitrate = PSMediaSessionMaximumAudioRateMultiparty
-//      config.maxVideoBitrate = ...
-//      config.cameraPosition = ...
-//      config.preferredVideoCodec = ... etc..
-
 
 // toggle button parameter.
 @property (assign, nonatomic) BOOL isAudioMute;
 @property (assign, nonatomic) BOOL isVideoMute;
+@property (assign, nonatomic) BOOL isRearFacingCamera;
 @property (assign, nonatomic) BOOL isOptionsEnabled;
 
 // var to store remote user id.
-@property (copy, nonatomic) NSString *remoteUserId;
-
+@property (strong, nonatomic) PWParticipant *remoteParticipant;
 
 // custom bar button item with badge count (unread messages count).
 @property (strong, nonatomic) BBBadgeBarButtonItem *chatButton;
 
-//...
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
 @property (strong, nonatomic) UILabel *lblTitle;
 
@@ -89,6 +77,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"ProRTC version = %@", [PWMediaSession version]);
     
     self.navigationItem.hidesBackButton = YES;
     self.arrMessages = [NSMutableArray new];
@@ -101,23 +90,25 @@
     self.localVideoView.layer.shadowOpacity = 0.5;
     self.localVideoView.layer.shadowColor   = [UIColor blackColor].CGColor;
     
-    
     // Initialize session.
+    [self prepareUserMeida];
+    
     self.mediaSession = [PWMediaSession sharedSession];
-    
-    
-    // Start video call.
-    // @param: room Id or meeting Id.
-    // @param: participant name --
-    // @param: delegate <PWMediaSessionDelegate>
-    //
-    
     NSString *name = [UIDevice currentDevice].name;
-    [self.mediaSession startVideoCall:self.roomName displayName:name delegate:self];
+    
+    PWConnectOptionsBuilder *connectOptionBuilder = [PWConnectOptionsBuilder new];
+    connectOptionBuilder.name = self.roomName;
+    connectOptionBuilder.participantName = name;
+    connectOptionBuilder.localMedia = self.localMedia;
+    
+    PWConnectOptions *connectOptions = [[PWConnectOptions alloc] initWithBuilder:connectOptionBuilder];
+    [self.mediaSession connectWithOptions:connectOptions delegate:self];
+    
+    // Stop device to going into sleep mode during video conferencing.
+    [self.mediaSession setIdleTimerDisabled:YES];
     
     // add notification observers to perform chat operations. (Send by ChatController.)
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newMessageSent:) name:@"newMessageSent" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newPrivateMessageSent:) name:@"newPrivateMessageSent" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissing) name:@"dismissing" object:nil];
 }
 
@@ -137,21 +128,29 @@
     }
 }
 
-- (void)newPrivateMessageSent:(NSNotification *)notif
-{
-    if (notif.object) {
-        
-        Message *message = notif.object;
-        [self.mediaSession sendMessage:message.text toPeer:message.selectedUser];
-    }
-}
-
 - (void)dismissing
 {
     isOnConferenceVC = YES;
 }
 
 #pragma mark - Private
+
+- (void)prepareUserMeida
+{
+    if (!self.localMedia) {
+        self.localMedia = [[PWLocalMedia alloc] init];
+    }
+    
+    if (!self.localAudioTrack) {
+        self.localAudioTrack = [self.localMedia addAudioTrack:YES];
+    }
+    
+    if (!self.localVideoTrack) {
+        self.localVideoTrack = [self.localMedia addVideoTrack:YES];
+    }
+    
+    [self.localVideoView bindWithLocalVideoTrack:self.localVideoTrack];
+}
 
 - (void)enableOptions {
     
@@ -237,12 +236,12 @@
 
 - (void)mediaSession:(PWMediaSession *)session didConnectToRoom:(PWRoom *)room
 {
-    NSLog(@"Connected to room: %@", room.meetingId);
+    NSLog(@"connected to room %@ as %@", room.name, self.mediaSession.localParticipant.name);
 }
 
-- (void)mediaSession:(PWMediaSession *)session didDisconnectToRoom:(PWRoom *)room
+- (void)mediaSession:(PWMediaSession *)session didDisconnectFromRoom:(PWRoom *)room
 {
-    NSLog(@"Disconnected to room: %@", room.meetingId);
+    NSLog(@"disconnected from room %@", room.name);
 }
 
 - (void)mediaSession:(PWMediaSession *)session didChangeState:(PWConnectionState)state
@@ -276,7 +275,7 @@
 
 - (void)mediaSession:(PWMediaSession *)session didFailWithError:(NSError *)error
 {
-    NSLog(@"Fail with error description: %@ \n Failure reason: %@ Error code: %ld", error.localizedDescription, error.localizedFailureReason, (long)error.code);
+    NSLog(@"fail with error description %@\nfailure reason %@ error code %ld", error.localizedDescription, error.localizedFailureReason, (long)error.code);
     
     if (error) {
         
@@ -291,52 +290,34 @@
         [alertController addAction:disconnect];
         [self presentViewController:alertController animated:YES completion:nil];
         
-        
         // For performing different operations on different error.
-        // @See: kWebSocketErrorCode (defined in PWTypes.h)
+        // @See: PWError.h
     }
 }
 
-- (void)mediaSession:(PWMediaSession *)session didAddLocalStream:(PWMediaStream *)localStream
+- (void)mediaSession:(PWMediaSession *)session didJoinNewParticipant:(PWParticipant *)participant
 {
-    // No need of rendering in case of audio conferencing.
-    if (localStream.isVideoTrackAvailable) {
-        
-        // save video track of media stream.
-        self.localVideoTrack = localStream.videoTracks[0];
-        
-        // start rendering of local camera video.
-        [self.localVideoView bindWithLocalVideoTrack:self.localVideoTrack];
-    }
+    NSLog(@"new participant joined as %@", participant.sid);
+}
+
+- (void)mediaSession:(PWMediaSession *)session addedVideoTrack:(PWVideoTrack *)videoTrack ofParticipant:(PWParticipant *)participant
+{
+    NSLog(@"added video of participant %@", participant.sid);
+    self.remoteVideoTrack = videoTrack;
+    self.remoteParticipant = participant;
     
-    // Stop device to going into sleep mode during video conferencing.
-    [self.mediaSession setIdleTimerDisabled:YES];
-}
-
-- (void)mediaSession:(PWMediaSession *)session didAddRemoteStream:(PWMediaStream *)remoteStream ofPeer:(PWRemotePeer *)remotePeer
-{
-    // No need of rendering in case of audio conferencing.
-    if (remoteStream.isVideoTrackAvailable) {
-        
-        // save video track of media stream.
-        self.remoteVideoTrack = remoteStream.videoTracks[0];
-        
-        // start rendering of remote camera video.
-        [self.remoteVideoView bindTrack:self.remoteVideoTrack];
-        
-        // save remote user id, will be useful for further operation e.g. sending messages.
-        self.remoteUserId = remotePeer.peerId;
-    }
+    // start rendering of remote video.
+    [self.remoteVideoView bindTrack:self.remoteVideoTrack];
     
     if (!self.isOptionsEnabled) {
         [self enableOptions];
     }
 }
 
-- (void)mediaSession:(PWMediaSession *)session didReceiveTextMessage:(NSString *)message ofPeer:(PWRemotePeer *)remotePeer
+- (void)mediaSession:(PWMediaSession *)session didReceiveTextMessage:(NSString *)message ofParticipant:(PWParticipant *)participant
 {
     Message *objMessage = [Message new];
-    objMessage.username = remotePeer.displayName;
+    objMessage.username = participant.name;
     objMessage.text     = message;
     
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
@@ -354,14 +335,11 @@
     }
 }
 
-- (void)mediaSession:(PWMediaSession *)session didDisconnectPeer:(PWRemotePeer *)remotePeer
+- (void)mediaSession:(PWMediaSession *)session didDisconnectParticipant:(PWParticipant *)participant
 {
-    NSLog(@"Peer left room: %@", remotePeer.peerId);
-    
-    // If 1x1 then no need to stay :P, end call here.
+    NSLog(@"participant disconnected %@", participant.sid);
     [self btnHangup_Action:self.btnHangup];
 }
-
 
 #pragma mark - IBActions
 
@@ -375,7 +353,7 @@
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:chatController];
     
-    chatController.opponentIdStr = self.remoteUserId;
+    chatController.opponentIdStr = self.remoteParticipant.sid;
     chatController.messages = self.arrMessages;
     [self presentViewController:navController animated:YES completion:nil];
 }
@@ -383,12 +361,12 @@
 - (IBAction)btnAudio_Action:(id)sender {
     
     if (self.isAudioMute) {
-        [self.mediaSession startMic];
+        self.localAudioTrack.enabled = YES;
         [self.btnAudio setImage:[UIImage imageNamed:@"audioOn"] forState:UIControlStateNormal];
         self.isAudioMute = NO;
     }
     else {
-        [self.mediaSession stopMic];
+        self.localAudioTrack.enabled = NO;
         [self.btnAudio setImage:[UIImage imageNamed:@"audioOff"] forState:UIControlStateNormal];
         self.isAudioMute = YES;
     }
@@ -399,12 +377,12 @@
 - (IBAction)btnVideo_Action:(id)sender {
     
     if (self.isVideoMute) {
-        [self.mediaSession startCamera];
+        self.localVideoTrack.enabled = YES;
         [self.btnVideo setImage:[UIImage imageNamed:@"videoOn"] forState:UIControlStateNormal];
         self.isVideoMute = NO;
     }
     else {
-        [self.mediaSession stopCamera];
+        self.localVideoTrack.enabled = NO;
         [self.btnVideo setImage:[UIImage imageNamed:@"videoOff"] forState:UIControlStateNormal];
         self.isVideoMute = YES;
     }
@@ -422,28 +400,34 @@
 {
     NSLog(@"Switching camera position.");
     
-    if (self.mediaSession.cameraPosition == PWCameraPositionFront) {
-        [self.mediaSession switchCameraPosition:PWCameraPositionBack];
+    if (!self.localMedia.canUseBackCamera) {
+        NSLog(@"Rear-facing camera source not available.");
+        return;
     }
-    else {
-        [self.mediaSession switchCameraPosition:PWCameraPositionFront];
-    }
+    
+    self.isRearFacingCamera = !self.isRearFacingCamera;
+    self.localMedia.useBackCamera = self.isRearFacingCamera;
 }
 
 - (IBAction)btnHangup_Action:(id)sender {
     
-    // stop rendering.
-    if (self.remoteVideoTrack) [self.remoteVideoView unBindTrack:self.remoteVideoTrack];
-    
-    // remove stored videos data.
-    self.localVideoTrack = nil;
-    self.remoteVideoTrack = nil;
-    
-    // end call.
-    [self.mediaSession endCall];
-    
     // Enable device idle timer that you disabled when your call started, you don't want user's device to be active always.
     [self.mediaSession setIdleTimerDisabled:NO];
+    
+    // stop rendering.
+    if (self.remoteVideoTrack) {
+        [self.remoteVideoView unBindTrack:self.remoteVideoTrack];
+        self.remoteVideoTrack = nil;
+    }
+
+    self.localVideoTrack = nil;
+    self.localAudioTrack = nil;
+    
+    // end call.
+    [self.mediaSession disconnect];
+    self.localMedia = nil;
+    self.remoteParticipant = nil;
+    self.mediaSession = nil;
     
     [self.navigationController popViewControllerAnimated:YES];
 }
