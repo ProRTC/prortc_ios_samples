@@ -37,16 +37,6 @@ typedef NS_ENUM(NSInteger, PWConnectionState) {
     PWConnectionStateConnected,
 };
 
-/**
- *  @brief Enable or disable datachannels.
- *
- *  @discussion If datachannels are disabled, data transfer will not work.
- *
- *  @param enable YES or NO
- */
-extern void PWMediaSessionEnableDataChannels(BOOL enable);
-
-
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -130,6 +120,15 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param participant The participant who sent the message.
  */
 - (void)mediaSession:(PWMediaSession *)session didReceiveTextMessage:(NSString *)message ofParticipant:(PWParticipant *)participant;
+
+/**
+ *  @brief This method is invoked when session receives signal in the room.
+ *
+ *  @param session The session in which the client is connected.
+ *  @param type The type of the signal.
+ *  @param args The signal data.
+ */
+- (void)mediaSession:(PWMediaSession *)session didReceiveSignalType:(NSString *)type args:(NSDictionary *)args;
 
 /**
  *  @brief This method is invoked when session starts receiving document.
@@ -257,6 +256,22 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)stopCollectingStats;
 
+/**
+ *  @brief Sends a signal to one or more participants in the room.
+ *
+ *  @param type The type of the signal.
+ *  @param args The data to send. The limit to the size of data is 8KB.
+ *  @param error The encountered error, If sending a signal fails.
+ *  The `PWError` enum includes constants for the errors.
+ *
+ *  Note that success indicates that the arguments passed into the method
+ *  are valid and the signal was sent. It does not indicate that the signal was
+ *  sucessfully received by any of the intended recipients.
+ */
+- (void)signalWithType:(NSString *)type
+                  args:(NSDictionary *)args
+                 error:(NSError * _Nullable * _Nullable)error;
+
 /** 
  *  @brief Send message to all participants in the room.
  *
@@ -270,7 +285,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param message The message.
  *  @param peerId Recipient Id.
  */
-- (void)sendMessage:(NSString *)message toPeer:(NSString *)peerId;
+- (void)sendMessage:(NSString *)message
+             toPeer:(NSString *)peerId;
 
 /**
  *  @brief Method to transfer data.
@@ -283,7 +299,11 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @discussion This method requires datachannels to be enabled.
  */
-- (void)sendFileData:(NSData *)data withFileName:(NSString *)filename ofType:(NSString *)extension toPeer:(NSString *)peerId streamId:(NSString *)streamId;
+- (void)sendFileData:(NSData *)data
+        withFileName:(NSString *)filename
+              ofType:(NSString *)extension
+              toPeer:(NSString *)peerId
+            streamId:(NSString *)streamId;
 
 /**
  *  @brief Check video access permission is allowed by user.

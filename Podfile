@@ -8,6 +8,6 @@ target 'ProRTCSmapleIOS' do
   # Pods for ProRTCSmapleIOS
 
 pod 'SlackTextViewController'
-pod 'ProRTC', '1.0.0-beta1'
+pod 'ProRTC', '1.0.0-beta2'
 
 end

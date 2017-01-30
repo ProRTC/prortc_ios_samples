@@ -22,8 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  handled by ProRTC servers.
  *
  *  @discussion It is possible to change web-socket URL to deploy communication through your own server,
- *  Your signaling methods MUST be compatible with ProRTC framework. For more details:
- *  Contact us https://prortc.com/contact-us.php
+ *  For more details: https://prortc.com/contact-us.php
  */
 @property (nonatomic, strong, nullable) NSString *url;
 
@@ -46,11 +45,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) NSString *participantName;
 
 /**
- *  @brief The local media of device.
+ *  @brief The media of your device.
  *
  *  @discussion This local media will be shared with other participants in the room.
  */
 @property (nonatomic, strong) PWLocalMedia *localMedia;
+
+/**
+ *  @brief Indicates If the data-channel is enabled. Default is NO.
+ */
+@property (nonatomic, assign) BOOL enableDataChannel;
 
 @end
 
@@ -64,8 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  handled by ProRTC servers.
  *
  *  @discussion It is possible to change web-socket URL to deploy communication through your own server,
- *  Your signaling methods MUST be compatible with ProRTC framework. For more details:
- *  Contact us https://prortc.com/contact-us.php
+ *  For more details: https://prortc.com/contact-us.php
  */
 @property (nonatomic, readonly, copy, nullable) NSString *url;
 
@@ -88,11 +91,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, copy, nullable) NSString *participantName;
 
 /**
- *  @brief  The local media of device.
+ *  @brief The media of your device.
  *
  *  @discussion This local media will be shared with other participants in the room.
  */
 @property (nonatomic, readonly, strong) PWLocalMedia *localMedia;
+
+/**
+ *  @brief Indicates If the data-channel is enabled. Default is NO.
+ */
+@property (nonatomic, readonly, assign, getter=isEnabledDataChannel) BOOL enableDataChannel;
 
 /**
  *  @brief Developers cannot initialize this class directly.
