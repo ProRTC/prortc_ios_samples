@@ -7,8 +7,8 @@
 <br>
 # ProRTC iOS Sample - A WebRTC Solution for iOS
 
-[![Version](https://img.shields.io/cocoapods/v/ProRTC.svg?style=flat)]()
-[![Platform](https://img.shields.io/cocoapods/p/ProRTC.svg?style=flat)]()
+[![Version](https://img.shields.io/cocoapods/v/ProRTC.svg?style=flat)](http://cocoapods.org/pods/ProRTC)
+[![Platform](https://img.shields.io/cocoapods/p/ProRTC.svg?style=flat)](http://cocoapods.org/pods/ProRTC)
 [![Twitter](https://img.shields.io/badge/twitter-@ProRTC-55acee.svg?style=flat)](http://twitter.com/ProRTCApp)
 [![Facebook](https://img.shields.io/badge/facebook-@ProRTC-3b5998.svg?style=flat)](https://www.facebook.com/Prortcapp-999509483500735/)
 [![Google](https://img.shields.io/badge/google+-@ProRTC-dd4b39.svg?style=flat)](https://plus.google.com/+CodiantInc)
@@ -59,7 +59,7 @@ To integrate ProRTC into your Xcode project using CocoaPods, specify it in your 
 platform :ios, '9.0'
 
 target 'TargetName' do
-pod 'ProRTC', '1.0.0-beta1'
+pod 'ProRTC', '1.0.0-beta2'
 end
 ```
 
@@ -124,8 +124,8 @@ None at this time.
 <br><br>
 ProRTC project authors, support@prortc.com
 
-## Changelog
-### See [Changelog.md](https://github.com/ProRTC/prortc_ios_samples/blob/master/CHANGELOG.md)
+## ProRTC Release-notes
+### See [Release-note.markdown](https://github.com/ProRTC/ProRTC/blob/master/Release-note.markdown)
 
 ## License
 You're free to copy and modify the source code of ProRTC sample project for your own projects. See LICENSE for details.
