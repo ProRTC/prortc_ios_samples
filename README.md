@@ -116,16 +116,13 @@ Supported on **Wi-Fi** and **3G/4G/LTE** connections.
 ## Contributing
 If you want to contribute in WebRTC era, share your ideas, changes and modifications to provide more benefits to developers.
 
-## Known Issues
-None at this time.
-
 ## Author
 [Codiant Software Technology Pvt Ltd](http://www.codiant.com) develops and operates ProRTC.
 <br><br>
 ProRTC project authors, support@prortc.com
 
-## ProRTC Release-notes
-### See [Release-note.markdown](https://github.com/ProRTC/ProRTC/blob/master/Release-note.markdown)
+## Release-notes
+### See [ProRTC Release-notes](https://github.com/ProRTC/ProRTC/blob/master/Release-note.markdown)
 
 ## License
 You're free to copy and modify the source code of ProRTC sample project for your own projects. See LICENSE for details.
