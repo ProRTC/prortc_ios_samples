@@ -36,8 +36,8 @@ ProRTC iOS sample helps you to better understand the features of ProRTC and demo
 
 # How To Get Started
 
-- [Download ProRTC](http://prortc.com/) and try out the included sample project.
-- Check out the [documentation](http://prortc.com/document/) for the APIs available in ProRTC framework.
+- [Download ProRTC](https://prortc.com/) and try out the included sample project.
+- Check out the [documentation](http://cocoadocs.org/docsets/ProRTC/1.0.0-beta2.1/) for the APIs available in ProRTC framework.
 
 # Installation
 
@@ -59,7 +59,7 @@ To integrate ProRTC into your Xcode project using CocoaPods, specify it in your 
 platform :ios, '9.0'
 
 target 'TargetName' do
-pod 'ProRTC', '1.0.0-beta2'
+pod 'ProRTC', '1.0.0-beta2.1'
 end
 ```
 
@@ -71,7 +71,7 @@ $ pod install
 
 ## Manually
 
-Drag & drop `ProRTC.framework` into your project. If you don't have `ProRTC.framework`, you can download from [here](http://prortc.com/) Or you can easily find in this sample project.
+Drag & drop `ProRTC.framework` into your project. If you don't have `ProRTC.framework`, you can download from [here](https://prortc.com/) Or you can easily find in this sample project.
 
 The ProRTC framework requires the following frameworks and libraries:
 * UIKit.framework

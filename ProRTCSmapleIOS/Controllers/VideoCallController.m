@@ -124,7 +124,7 @@
     if (notif.object) {
         
         Message *message = notif.object;
-        [self.mediaSession sendMessage:message.text];
+        [self.mediaSession sendMessage:message.text toPeer:self.remoteParticipant.sid];
     }
 }
 
@@ -315,7 +315,7 @@
 }
 
 - (void)mediaSession:(PWMediaSession *)session didReceiveTextMessage:(NSString *)message ofParticipant:(PWParticipant *)participant
-{
+{  
     Message *objMessage = [Message new];
     objMessage.username = participant.name;
     objMessage.text     = message;
@@ -428,7 +428,9 @@
     self.localMedia = nil;
     self.remoteParticipant = nil;
     self.mediaSession = nil;
-    
+  
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"newMessageSent" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"dismissing" object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -9,7 +9,7 @@
 # ProRTC
 
 [![Version](https://img.shields.io/cocoapods/v/ProRTC.svg?style=flat)](http://cocoapods.org/pods/ProRTC)
-[![License](https://img.shields.io/cocoapods/l/ProRTC.svg?style=flat)](http://cocoapods.org/pods/ProRTC)
+[![License](https://img.shields.io/cocoapods/l/ProRTC.svg?style=flat)](https://prortc.com/terms-conditions.php)
 [![Platform](https://img.shields.io/cocoapods/p/ProRTC.svg?style=flat)](http://cocoapods.org/pods/ProRTC)
 [![Twitter](https://img.shields.io/badge/twitter-@ProRTC-blue.svg?style=flat)](http://twitter.com/ProRTCApp)
 
@@ -36,9 +36,15 @@ it, simply add the following line to your Podfile:
 platform :ios, '9.0'
 
 target 'TargetName' do
-pod 'ProRTC', '1.0.0-beta2'
+pod 'ProRTC', '1.0.0-beta2.1'
 end
 ```
+
+## Documentation
+
+[ProRTC Documentation](http://cocoadocs.org/docsets/ProRTC/1.0.0-beta2.1/)
+
+## Samples
 
 For how to use? check [prortc_ios_samples](https://github.com/ProRTC/prortc_ios_samples)
 

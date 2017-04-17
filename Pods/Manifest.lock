@@ -1,15 +1,15 @@
 PODS:
-  - ProRTC (1.0.0-beta2)
+  - ProRTC (1.0.0-beta2.1)
   - SlackTextViewController (1.9.3)
 
 DEPENDENCIES:
-  - ProRTC (= 1.0.0-beta2)
+  - ProRTC (= 1.0.0-beta2.1)
   - SlackTextViewController
 
 SPEC CHECKSUMS:
-  ProRTC: 8457d3fcf8fdcff1b59cf5aca5ec44ae976cfd00
+  ProRTC: de695e5ea880424dc571ffd65d59569829937834
   SlackTextViewController: bd2a34c188d4f7dec93cf42388f38551263fac82
 
-PODFILE CHECKSUM: 8c690a26c57d52e32a165a4c8b6a2e5adef6eee1
+PODFILE CHECKSUM: 24ada8ad2c76936373da97f39fd00fed5bf1b8e7
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
